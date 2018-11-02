@@ -1,0 +1,18 @@
+<div class="tblank" tappable (click)="dimiss()">
+
+</div>
+<div class="sharecontent">
+  <p class="choiceshare">选择分享方式</p>
+  <ion-grid style="padding: 0">
+      <ion-row>
+          <ion-col col-4 class="tcol" tappable (click)="share(1)">
+            <ion-icon  ios="ios-weixin" style="line-height: 4rem"></ion-icon>
+            <p>微信好友</p>
+          </ion-col>
+        <ion-col col-4 class="tcol" tappable (click)="share(2)">
+            <ion-icon ios="ios-pengyouquan" style="line-height: 4rem"></ion-icon>
+            <p>微信朋友圈</p>
+        </ion-col>
+     </ion-row>
+  </ion-grid>
+</div>

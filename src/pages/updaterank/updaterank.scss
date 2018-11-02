@@ -1,0 +1,44 @@
+page-updaterank {
+     //card begin
+     .card-line{
+        text-align: center;
+        height: 60px;
+        line-height: 60px;
+        position: relative;
+    }
+    .head-span{
+        float: left;
+        color: #333333;
+        font-size: 1.6rem;
+    }
+    .card-div{
+        background: #FFFFFF;
+        padding: 0.2rem 1rem;
+        margin-top: 1.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin: 1.5rem auto 1.5rem auto;
+        border-radius: 0.8rem;
+        width: 90%;
+    }
+    .line-div{
+        border-top: 0.1rem solid #eeeeee
+    }
+    .card-line img{
+        height: 26px;
+        width: 26px;
+        float: left;
+        margin-top: 17px;
+        margin-right: 5px;
+    }
+    .arrows{
+        position: absolute;
+        right:0.1rem;
+        top:22px; 
+    }
+    //card stop
+    .confirm{
+        width: 80%;
+        margin: 8rem auto 0 auto;
+    }
+}

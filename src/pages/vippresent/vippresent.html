@@ -1,0 +1,50 @@
+<!--
+  Generated template for the VippresentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>名额赠送</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content style="background: #eeeeee;">
+    <div padding>
+        <ion-segment [(ngModel)]="type" (ionChange)="segmentChanged($event)" color="danger">
+          <ion-segment-button value="possessor">
+            未赠送
+          </ion-segment-button>
+          <ion-segment-button value="alreadygive">
+            已赠送
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+      
+      <div [ngSwitch]="type">
+        <ion-list *ngSwitchCase="'possessor'">
+            
+          <ion-item *ngFor="let item of list">
+             
+            <h2  *ngIf="item.Lev == 1">等级：VIP</h2>
+            <h2  *ngIf="item.Lev == 2">等级：合伙人</h2>
+            <button (tap)= "GiveImmediately(item.Id)" *ngIf="item.canUse == 1" ion-button item-right color="danger" >赠送</button>
+            <button *ngIf="item.canUse == 0" color="gray" ion-button item-right>赠送</button>
+          </ion-item>
+          
+        </ion-list>
+      
+        <ion-list *ngSwitchCase="'alreadygive'">
+            
+            <ion-item *ngFor="let item of list">
+             
+                <h2  *ngIf="item.Lev == 1">等级：VIP  （被赠送人：{{item.SysID}}）</h2>
+                <h2  *ngIf="item.Lev == 2">等级：合伙人  （被赠送人：{{item.SysID}}） </h2>
+                
+                <button color="gray" ion-button item-right>已赠送</button>
+              </ion-item>
+        </ion-list>
+      </div>
+</ion-content>

@@ -1,0 +1,45 @@
+
+<ion-header>
+
+  <ion-navbar class="title">
+        <ion-title>会员专区</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>       
+      <div class="list_content">
+        <div class="sub_header">
+          <div (tap)="search_sale()">
+            <span [ngClass]="{'tcl':selectTag=='sale'}">销量</span>
+          </div>
+          <div (tap)="search_price()" [ngClass]="{'down':priceFlag}" class="up">
+              <span [ngClass]="{'tcl':selectTag=='price'}">价格</span>
+          </div>
+          <div (tap)="search_elec()" [ngClass]="{'down':elecFlag}" class="up">
+              <span [ngClass]="{'tcl':selectTag=='elec'}">积分</span>
+          </div>
+      </div>
+    
+        <ion-list inset>
+          <ng-container *ngFor="let item of list">
+            <ion-item (tap)="goProduct(item.id)" class="tlist" *ngIf="item.productphotos.length>0">
+                <ion-thumbnail  item-left>
+                  <img [src]="config.domain+item.productphotos[0].photo"/>            
+                </ion-thumbnail>
+                <h2 class="tpn"> {{item.productname}}</h2>
+                <p class="tp">
+                    <span style="color:red">¥</span><span style="color: red;font-size: 1.8rem" class="price">&nbsp;{{item.price}}</span>
+                    <span style="float: right;"><ion-icon style="color: #e0532d;" name="ios-redBack"></ion-icon><span style="color:#e0532d;font-size: 1.2rem">&nbsp;{{item.elecnum}}</span></span>
+                </p>
+              </ion-item>
+          </ng-container>  
+        </ion-list>
+        <ion-infinite-scroll (ionInfinite)="doLoadMore($event)" thr>
+            <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+            </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+      </div>
+    
+</ion-content>

@@ -1,0 +1,29 @@
+<!--
+  Generated template for the ElectransferPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>转让现金币</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background: #eeeeee;">
+    <ion-list style="margin-top:1rem;">
+        <ion-item>
+          <ion-label>转让给</ion-label>
+          <ion-input type="number" [(ngModel)]="sysID" placeholder="请输入众健号"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>转让金额</ion-label>
+          <ion-input type="number" [(ngModel)]="transferElec"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>现有金额</ion-label>
+            <ion-input class="remain_elec" type="number" value="{{remainElec}}" readonly></ion-input>
+          </ion-item>
+      </ion-list>
+      <button ion-button block color="danger" class="confirm" (tap)="execute()">确定转让</button>
+</ion-content>

@@ -1,0 +1,72 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-searchbar (tap)="goSearch()"></ion-searchbar>
+  </ion-navbar>
+</ion-header> -->
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)"> 
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="下拉刷新"
+          refreshingSpinner="circles"
+          refreshingText="刷新..."> 
+        </ion-refresher-content>
+      </ion-refresher>
+    <div class="tc" [ngClass]="{'tcRed':isRed}" #search>
+      <div>
+        <ion-searchbar class="tsearch" (tap)="goSearch()"></ion-searchbar>
+      </div>
+      <!-- <div class="message">
+        <a><img src="assets/icon/message.png"></a>
+      </div> -->
+    </div>
+    <page-index-adv #indexAdv></page-index-adv>
+    <div class="dis">
+      <ion-modle-a [params]="paramsA1" style="display: none;"></ion-modle-a>
+      <ion-modle-b [params]="paramsB1" style="display: none;"></ion-modle-b>
+      <ion-modle-c [params]="paramsC1" style="display: none;"></ion-modle-c>
+      <ion-modle-d [params]="paramsD1" style="display: none;"></ion-modle-d>
+      <ion-modle-g [params]="paramsG1" style="display: none;"></ion-modle-g>
+    </div>
+    <div class="dis">
+      <ion-modle-a [params]="paramsA2" style="display: none;"></ion-modle-a>
+      <ion-modle-b [params]="paramsB2" style="display: none;"></ion-modle-b>
+      <ion-modle-c [params]="paramsC2" style="display: none;"></ion-modle-c>
+      <ion-modle-d [params]="paramsD2" style="display: none;"></ion-modle-d>
+      <ion-modle-g [params]="paramsG2" style="display: none;"></ion-modle-g>
+    </div>
+    <div class="dis">
+      <ion-modle-a [params]="paramsA3" style="display: none;"></ion-modle-a>
+      <ion-modle-b [params]="paramsB3" style="display: none;"></ion-modle-b>
+      <ion-modle-c [params]="paramsC3" style="display: none;"></ion-modle-c>
+      <ion-modle-d [params]="paramsD3" style="display: none;"></ion-modle-d>
+      <ion-modle-g [params]="paramsG3" style="display: none;"></ion-modle-g>
+    </div>
+    <div class="dis">
+      <ion-modle-a [params]="paramsA4" style="display: none;"></ion-modle-a>
+      <ion-modle-b [params]="paramsB4" style="display: none;"></ion-modle-b>
+      <ion-modle-c [params]="paramsC4" style="display: none;"></ion-modle-c>
+      <ion-modle-d [params]="paramsD4" style="display: none;"></ion-modle-d>
+      <ion-modle-g [params]="paramsG4" style="display: none;"></ion-modle-g>
+    </div>
+    <div class="dis">
+      <ion-modle-a [params]="paramsA5" style="display: none;"></ion-modle-a>
+      <ion-modle-b [params]="paramsB5" style="display: none;"></ion-modle-b>
+      <ion-modle-c [params]="paramsC5" style="display: none;"></ion-modle-c>
+      <ion-modle-d [params]="paramsD5" style="display: none;"></ion-modle-d>
+      <ion-modle-g [params]="paramsG5" style="display: none;"></ion-modle-g>
+    </div>
+    <div class="dis">
+      <ion-modle-a [params]="paramsA6" style="display: none;"></ion-modle-a>
+      <ion-modle-b [params]="paramsB6" style="display: none;"></ion-modle-b>
+      <ion-modle-c [params]="paramsC6" style="display: none;"></ion-modle-c>
+      <ion-modle-d [params]="paramsD6" style="display: none;"></ion-modle-d>
+      <ion-modle-g [params]="paramsG6" style="display: none;"></ion-modle-g>
+    </div>
+    <!-- <ion-modle-a [params]="params"></ion-modle-a>
+    <ion-modle-b [params]="paramsB"></ion-modle-b>
+    <ion-modle-a [params]="params"></ion-modle-a>
+    <ion-modle-c [params]="paramsC"></ion-modle-c>
+    <ion-modle-a [params]="params"></ion-modle-a>
+    <ion-modle-c [params]="paramsC"></ion-modle-c> -->
+</ion-content>

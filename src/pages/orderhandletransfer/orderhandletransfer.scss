@@ -1,0 +1,53 @@
+page-orderhandletransfer {
+
+    .card{
+        border-radius: 8px;
+        background-color: #f53d3d;
+        color: #fff;
+        width: 90%;
+        margin: 20px auto;
+        height: 150px;
+        .content{
+            height: 50px;
+            padding: 15px 10px 10px 10px;
+            
+        }
+
+        .buttonsB{
+            width: 80px;
+            margin: 0 auto;
+            margin-top: 40px;
+            .button{
+                padding: 1.5px;
+                border: 1px solid yellow;
+                color: yellow;
+                border-radius: 12px;
+                width: 80px;
+            }
+        }
+        .buttonsA{
+            width: 180px;
+            margin: 0 auto;
+            position: relative;
+            margin-top: 40px;
+            > :first-child{
+                padding: 1.5px;
+                border: 1px solid yellow;
+                color: yellow;
+                border-radius: 12px;
+                width: 80px;
+                float: left;
+            }
+            > :last-child{
+                padding: 1.5px;
+                border: 1px solid yellow;
+                color: yellow;
+                border-radius: 12px;
+                width: 80px;
+    
+                float: right;
+            }
+        }
+    }
+  
+}

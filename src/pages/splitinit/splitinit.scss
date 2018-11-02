@@ -1,0 +1,62 @@
+page-splitinit {
+.all{
+    margin: 10px auto 0 auto;
+    width: 90%;
+}
+.up{
+height: 150px;
+background-color: #fff;
+border-radius: 12px 12px 0 0;
+position: relative;
+>:first-child{
+    position: absolute;
+    height: 30px;
+    line-height: 30px;
+    top: 45px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+}
+>:last-child{
+    position: absolute;
+    height: 30px;
+    line-height: 30px;
+    top: 75px;
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+}
+}
+.down{
+    border-top: 1px solid #e3e3e3;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 0 0 12px 12px;
+}
+ul{
+    list-style:none;
+    height:50px; 
+    margin: 0 auto;
+    width: 80%;
+ 
+   li{
+    white-space: nowrap;
+    height:50px; 
+    text-align:center; 
+    line-height:50px;
+   
+    img{
+        vertical-align: middle;
+    }
+   }
+
+} 
+
+ li:first-child{
+    float:left;
+ }
+ li:last-child{
+    float:right;
+ }
+}

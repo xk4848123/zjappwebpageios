@@ -1,0 +1,78 @@
+addressmodel {
+    #hidebg { 
+        position:absolute;left:0px;top:0px; 
+        width:100%;  /*宽度设置为100%，这样才能使隐藏背景层覆盖原页面*/    
+        height: 100%;
+        z-Index:2;
+    }
+    .addressframe{
+        border-radius: 12px 12px 0 0;
+        height: 100%;
+        width:100%;
+        background: white;
+        position:absolute;
+        bottom: 0;
+        z-Index:3;
+     
+    }
+    .closeClass{
+
+        float: right;
+        padding: 2px;
+    }
+
+    .head{
+        margin-top: 8px;
+        margin-bottom: 5px;
+        font-size: 15px;
+        text-align: center;
+     }
+     .chooseHead{
+         background: #f6f6f6;
+         height:30px; 
+         margin-top: 15px;
+         ul{
+            list-style:none;
+           } 
+           li{
+                // color: black;
+            white-space: nowrap;
+            margin: 0 4.5%;
+            float:left; 
+            height:30px; 
+            text-align:center; 
+            line-height:30px; 
+            width:24.33%;
+            font-size: 18px;
+           }
+     }
+     .tip{
+         color: #999999;
+         margin: 20px 0 0 5px;
+         font-size: 15px;
+     }
+     .choose_tip{
+        color: #999999;
+        margin: 20px 0 0 5px;
+        font-size: 15px;
+    }
+     .chooseContent{
+        overflow:auto;//超过你设定的高度自动出现滚动条
+        // overflow:scroll;//始终出现滚动条
+        // overflow:hidden;
+        // overflow-x:hidden; 
+        // overflow-y:auto;//只有竖向滚动条 (超过你设定的高度自动)
+        height: 60%;
+         font-size: 18px;
+         margin-top: 5px;
+         div{
+             margin: 20px 0 20px 20px;
+         }
+     }
+     #city{
+         display: none;
+     }
+     #region{
+        display: none;
+     }
+}

@@ -1,0 +1,68 @@
+page-addbankacount {
+    .chooseButton img{
+         height: 2.4rem;
+         width: 2.4rem;
+     }
+     .chooseButton p {
+        margin: 0!important;
+        color: #666666!important;
+    }
+    .confirm{
+        width: 80%;
+        margin: 8rem auto 0 auto;
+    }
+    .card-div{
+        position:absolute;
+        bottom: 0;
+        background: #FFFFFF;
+        padding: 0.5rem 1rem 0.2rem 1rem;
+        // margin: 1.2rem auto 8rem auto;
+        border-radius: 0.8rem;
+        z-index: 3;
+        width: 80%;
+        img{
+            float: left;
+            margin-top: 0.5rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 4rem;
+            left: 10rem;
+        }
+        display: none;
+    }
+    .card-line-head{
+        text-align: center;
+        height: 4rem;
+        line-height: 4rem; 
+        // width: 80%;
+    }
+    .card-line-first{
+        text-align: center;
+        height: 4rem;
+        line-height: 4rem; 
+        font-size: 18px;
+        // width: 80%;
+    }
+    .head-span{
+        float: right;
+        right: 2rem;
+    }
+    .line-div{
+        border-top: 0.1rem solid #eeeeee
+    }
+
+    #hidebg { 
+        position:absolute;left:0px;top:0px; 
+        background-color:#000; 
+        width:100%;  /*宽度设置为100%，这样才能使隐藏背景层覆盖原页面*/    
+        height: 100%;
+        filter:alpha(opacity=60);  /*设置透明度为60%*/ 
+        opacity:0.6;  /*非IE浏览器下设置透明度为60%*/ 
+        display:none;
+        z-Index:2;
+    }
+    #content{
+        z-Index:1;
+    }
+    
+}

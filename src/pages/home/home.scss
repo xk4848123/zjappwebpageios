@@ -1,0 +1,42 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+page-home{
+    .tc{
+        position: fixed;
+        width: 100%;
+        z-index: 99;
+        padding-top: 0.1rem;
+    }
+    .tcRed{
+        background:#fe244b;
+    }
+    .message{
+        position: fixed;
+        z-index: 99; 
+        top: 1.2rem;
+        right: 1.5%;
+        img{
+            height: 2.08rem;
+        }
+    }
+    .tsearch{
+        border-bottom: 0 !important;
+        margin-left: 6.8% !important;
+        background: rgba(0, 0, 0, 0);
+        input{
+           width: 85% !important;
+           border-radius: 15rem !important;
+           border:0.1rem solid #ece5e5 !important;
+           padding-left: 9% !important;
+           background-color: rgba(0, 0, 0, 0.05) !important;
+        }
+        div{
+            div{
+                top: 0.99rem !important;
+                left: 3.9% !important;
+            }
+        }
+    }
+}

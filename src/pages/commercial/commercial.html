@@ -1,0 +1,48 @@
+<!--
+  Generated template for the CommercialPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>商学院</ion-title>
+  </ion-navbar>
+  <div class="img">
+      <img style="width:100%; height:200px;"   [src]="config.domain+commercialData.commercialCollegePic" />
+  </div>
+  <div class="fix_header">
+      <div class="row" id="sub_header">
+          <div class="col-demo" >热门推荐</div>
+          <div class="col-demo" >众健科技</div>
+          <div class="col-demo" >金牌教师</div>
+      </div>
+  </div>
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+        <ion-item  *ngFor="let item of temp" (tap)="pushDetail(item.id)">
+
+            <ion-avatar item-start  class="itemImg">
+                <img [src]="config.domain+item.coursePhotos[0].photo">
+              </ion-avatar>
+            <div class="title-font"><h3>{{item.coursename}}</h3><p>{{item.coursebrief}}</p></div>
+       </ion-item>
+       </ion-list>
+       <!-- <div>的</div> -->
+      <!-- 下拉刷新 -->
+    <ion-refresher (ionRefresh)="doRefresh($event)" threshold="50px">
+     <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles" refreshingText="刷新...">
+        </ion-refresher-content>
+        <ion-refresher-content>
+        </ion-refresher-content>
+    </ion-refresher> 
+    <!--上滑的时候，加载数据-->
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" thr>
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

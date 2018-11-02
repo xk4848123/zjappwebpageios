@@ -1,0 +1,32 @@
+<!--
+  Generated template for the VippresentdetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>名额赠送</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content style="background: #eeeeee;">
+    <ion-list style="margin-bottom: 0;">
+    <ion-item>
+  <ion-input type="number" [(ngModel)]='sysid' placeholder="请输入众健号"></ion-input>
+  <button ion-button item-right (tap)="searchBySysId()" color= "danger">搜索</button>
+  </ion-item>
+  </ion-list>
+  <ion-list *ngIf="obj"> 
+      <ion-item>
+        <ion-avatar item-start>
+          <img [src]="config.domain+obj.HeadPhoto">
+        </ion-avatar>
+        <h2>{{obj.UserName}}</h2>
+        <p>众健ID：{{obj.SysID}}</p>
+      </ion-item>
+    </ion-list>
+
+    <button ion-button block color="danger" class="executeButton" (tap)="execute()">立即赠送</button>
+</ion-content>

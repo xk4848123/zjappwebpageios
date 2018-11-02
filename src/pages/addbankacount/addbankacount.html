@@ -1,0 +1,48 @@
+<!--
+  Generated template for the AddbankacountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>添加银行账号</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background: #eeeeee;">
+    <div id="content">
+    <ion-list>
+        <ion-item>
+          <ion-label>姓名：</ion-label>
+          <ion-input type="text" [(ngModel)]="name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>卡号：</ion-label>
+          <ion-input type="number" [(ngModel)]="bankacount"></ion-input>
+        </ion-item>
+        <!-- (tap)="chooseBank()" -->
+        <button class="chooseButton" ion-item (tap) = "selectBank()">
+            请选择银行
+            <img item-right [src]="config.domain + selectInfo.logo" *ngIf="selectInfo">
+            <p item-right *ngIf="selectInfo">{{selectInfo.bankname}}&nbsp;&nbsp;</p>
+          </button> 
+        <ion-item>
+            <ion-label>支行信息：</ion-label>
+            <ion-input type="text" [(ngModel)]="bankinfo"></ion-input>
+          </ion-item>
+      </ion-list>
+      <button ion-button block color="danger" class="confirm" (tap)="confirm()">添加</button>
+    </div>
+      <div id="hidebg" (tap)="closeSelect()"></div>
+      <div class="card-div">
+        <div class="card-line-first">
+          请选择银行
+        </div>
+        <div class="line-div"></div>
+          <div [innerHTML]="assembleHTML(strHTML)"></div>
+          </div>
+</ion-content>

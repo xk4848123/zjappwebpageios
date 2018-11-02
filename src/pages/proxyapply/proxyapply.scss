@@ -1,0 +1,47 @@
+page-proxyapply {
+    .tip{
+        color: #f53d3d;
+    }
+    .img{
+        img{
+            height: 80px;
+            width: 80px;
+            float: left;
+            display: block;
+            margin-right: 15px;
+            border: 1px solid #ddd;
+        }
+    }
+    .confirm{
+        width: 80%;
+        margin: 32px auto 32px auto;
+    }
+    .fileCss{
+        display: none;
+    }
+    .btn-upload{
+        float: left;
+        display: block;
+        margin-right: 15px;
+        width: 80px;
+        height: 80px;
+        border: 1px solid #ddd;
+        background: #ebebeb;
+        line-height: 80px;
+        font-size: 14px;
+        text-align: center;
+        color: #808080;
+    }
+
+    .upload{
+        display: block;
+        margin-right: 80px;
+    }
+    .reupload{
+        display: none;
+        margin-right: 80px;
+    }
+    #tempImg{
+        display: none;
+    }
+}

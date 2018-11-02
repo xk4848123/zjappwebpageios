@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>我的名片</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="share()">
+        <ion-icon class="t-share" ios="md-share" md="md-share"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="ground">
+    <div class="inGround">
+      <div class="tcontent">
+        <img onerror="this.src='assets/imgs/user.png'" class="headimg" [src]="config.domain+headpic">
+        <div>
+          <p class="phone">{{username}}</p>
+          <p class="id">众健ID:{{sysId}}</p>
+        </div>
+      </div>
+      <div id="code" style="width: 100%;margin-left: 20%;margin-top: 20%">
+      </div>
+    </div>
+  </div>
+</ion-content>

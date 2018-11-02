@@ -1,0 +1,87 @@
+<!--
+  Generated template for the CertificationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>申请代理</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content style="background: #eeeeee;">
+  <ion-list>
+    <ion-item>
+      <span class="tip">{{tip}}</span>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="type==2 || type ==3" style="border-radius:3rem;">
+    <ion-item>
+      <ion-label>姓名：</ion-label>
+      <ion-input type="text" [(ngModel)]="name" placeholder="请输入姓名"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>手机号：</ion-label>
+      <ion-input type="number" [(ngModel)]="phoneNum" placeholder="请输入手机号"></ion-input>
+    </ion-item>
+    <button ion-item (tap)="chooseAddress()">
+      请选择地区：
+      <span>{{address}}</span>
+    </button>
+    <ion-item>
+      <ion-label>详细地址：</ion-label>
+      <ion-input type="text" [(ngModel)]="addressDetail" placeholder="请输入详细地址"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="type==1">
+    <ion-item>
+      <ion-label>姓名：</ion-label>
+      <ion-input type="text" [(ngModel)]="name" placeholder="请输入姓名" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>手机号：</ion-label>
+      <ion-input type="number" [(ngModel)]="phoneNum" placeholder="请输入手机号" readonly></ion-input>
+    </ion-item>
+    <button ion-item>
+      地区：
+      <span>{{address}}</span>
+    </button>
+    <ion-item>
+      <ion-label>详细地址：</ion-label>
+      <ion-input type="text" [(ngModel)]="addressDetail" placeholder="请输入详细地址" readonly></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item *ngIf="type==2 || type ==3">
+      <span>证件上传</span>
+      <button ion-button item-right (tap)="upload()" class="upload">上传</button>
+      <button ion-button item-right (tap)="reupload()" class="reupload">重新上传</button>
+    </ion-item>
+    <ion-item class="img" *ngIf="type==1">
+      <img [src]="config.domain+photoOne">
+      <img [src]="config.domain+photoTwo">
+      <img [src]="config.domain+photoThree">
+
+    </ion-item>
+    <ion-item class="img" *ngIf="type==2 || type ==3">
+      <div [innerHTML]="assembleHTML()"></div>
+      <label for="fileOne" class="btn-upload">身份证正面</label>
+      <input id="fileOne" class="fileCss" type="file" accept="image/*" name="file" />
+      <label for="fileTwo" class="btn-upload">身份证反面</label>
+      <input id="fileTwo" class="fileCss" type="file" accept="image/*" name="file" />
+      <label for="fileThree" class="btn-upload">营业执照</label>
+      <input id="fileThree" class="fileCss" type="file" accept="image/*" name="file" />
+    </ion-item>
+
+    <ion-item class="img" id="tempImg">
+      <img [src]="tempPhoto1">
+      <img [src]="tempPhoto2">
+      <img [src]="tempPhoto3">
+    </ion-item>
+  </ion-list>
+
+  <progress value="0" max="100" id="progress" style="height: 20px; width: 100%" *ngIf="type==2 || type == 3"></progress>
+  <button ion-button block color="danger" class="confirm" (tap)="confirm()" *ngIf="type==2 || type == 3">申请</button>
+</ion-content>

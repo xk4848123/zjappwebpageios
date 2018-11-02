@@ -1,0 +1,34 @@
+page-setting{
+.card-div{
+    background: #FFFFFF;
+    padding: 0.2rem 1rem;
+    margin: 1.2rem 0.8rem 5rem 0.8rem;
+    border-radius: 0.8rem;
+}
+.card-line{
+    text-align: center;
+    height: 3.8rem;
+    line-height: 3.8rem;
+    position: relative;
+}
+.head-span{
+    float: left;
+}
+
+.arrows{
+    position: absolute;
+    right:0.1rem;
+    top:1.2rem; 
+}
+.line-div{
+    border-top: 0.1rem solid #eeeeee
+}
+.content-span{
+    position: absolute;
+    right:1.5rem;
+}
+.tip{
+    text-indent: 1em;
+    color: #f53d3d;
+}
+}

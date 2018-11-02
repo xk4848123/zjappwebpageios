@@ -1,0 +1,89 @@
+page-confirm-vip-order {
+    .allcontent > div:nth-child(2){
+        margin-bottom: 44.8px;
+    }
+    .tfloot{
+        width: 100%;
+        display: flex;
+        bottom: 0;
+        position: absolute;
+        border-top: 1px solid #e3e3e3;
+        .buy{
+            float: right;
+            width: 30%;
+            border-radius: 0;
+            margin: 0;
+            span{
+                font-size: 1.4rem;
+            }
+        }
+        .tleft{
+            float: left;
+            width: 80%;
+            em{
+                line-height: 3.6rem;
+                font-size: 1.6rem;
+                color: #655c5c;
+                margin-left: 4%;
+            }
+            p{
+                display: inline;
+                font-size: 1.8rem;
+                color: red;
+            }
+        }
+    }
+    .taddress{
+        margin-top: 0.5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 3px dashed #6e75cc; 
+        border-top: 3px dashed #6e75cc;
+        outline: 8px solid #e3e3e3;
+        overflow: auto;
+        .addressicon{
+            float: left;
+            width: 15%;
+            line-height: 6rem;
+            text-align: center;
+            color: blue;
+        }
+        .tcontent{
+            float: right;
+            width: 85%;
+            .tname{
+                display: inline;
+            }
+            .tphone{
+                float: right;
+                margin-right: 4rem;
+            }
+            .tadd{
+                margin-top: 0.5rem;
+            }
+            .tadddetail{
+                margin-top: 0.5rem;
+            }
+        }
+        .tjian{
+            float: right;
+            margin-top: 2.1rem;
+            font-size: 1.8rem;
+        }
+    }
+    .tproduct{
+        margin-top: 1rem;
+        border-bottom: 8px solid #e3e3e3;
+    }
+    .tsettle{
+        padding: 1rem;
+        p:nth-child(1){
+            display: inline;
+
+        }
+        p:nth-child(2){
+            float: right;
+            color: red;
+        }
+    }
+}

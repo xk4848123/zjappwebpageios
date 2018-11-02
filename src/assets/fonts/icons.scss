@@ -1,0 +1,105 @@
+@font-face {
+  font-family: 'redapac';
+  src:  url('../assets/fonts/redapac.eot?f32kmp');
+  src:  url('../assets/fonts/redapac.eot?f32kmp#iefix') format('embedded-opentype'),
+    url('../assets/fonts/redapac.ttf?f32kmp') format('truetype'),
+    url('../assets/fonts/redapac.woff?f32kmp') format('woff'),
+    url('../assets/fonts/redapac.svg?f32kmp#redapac') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.redapac{
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'redapac' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ion-ios-客服:before,
+.ion-ios-客服-outline:before,
+.ion-ios-购物车:before,
+.ion-ios-购物车-outline:before,
+.ion-ios-redBack:before,
+.ion-ios-redBack-outline:before,
+.ion-ios-QQ:before,
+.ion-ios-QQ-outline:before,
+.ion-ios-weixin:before,
+.ion-ios-weixin-outline:before,
+.ion-ios-pengyouquan:before,
+.ion-ios-pengyouquan-outline:before,
+.ion-ios-QQspec:before,
+.ion-ios-QQspec-outline:before,
+.ion-ios-shoucang:before,
+.ion-ios-shoucang-outline:before,
+{
+  @extend .redapac
+}
+
+
+.ion-ios-QQspec:before {
+  content: "\e903";
+  color: #f5bf3b;
+}
+.ion-ios-QQspec-outline:before {
+  content: "\e903";
+  color: #f5bf3b;
+}
+.ion-ios-QQ:before {
+  content: "\e904";
+  color: #4e9ff9;
+}
+.ion-ios-QQ-outline:before {
+  content: "\e904";
+  color: #4e9ff9;
+}
+.ion-ios-pengyouquan:before {
+  content: "\e905";
+  color: #4bcb63;
+}
+.ion-ios-pengyouquan-outline:before {
+  content: "\e905";
+  color: #4bcb63;
+}
+.ion-ios-shoucang:before {
+  content: "\e906";
+  color: rgb(88, 205, 214);
+}
+.ion-ios-shoucang-outline:before {
+  content: "\e906";
+  color: rgb(88, 205, 214);
+}
+.ion-ios-weixin:before {
+  content: "\e908";
+  color: #00c800;
+}
+.ion-ios-weixin-outline:before {
+  content: "\e908";
+  color: #00c800;
+}
+.ion-ios-客服:before {
+  content: "\e900";
+}
+.ion-ios-客服-outline:before {
+  content: "\e900";
+}
+.ion-ios-购物车:before {
+  content: "\e901";
+}
+.ion-ios-购物车-outline:before {
+  content: "\e901";
+}
+.ion-ios-redBack:before {
+  content: "\e902";
+}
+.ion-ios-redBack-outline:before {
+  content: "\e902";
+}

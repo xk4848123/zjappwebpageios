@@ -1,0 +1,29 @@
+<div>
+  <div>
+      <ion-slides *ngIf="focusList.length>0" class="adv" pager  loop="true" autoplay="3000">    
+          <ion-slide *ngFor="let item of focusList">
+              <img src="{{config.domain+item.pic}}" (click)="goDetail(item)"/>
+          </ion-slide>         
+      </ion-slides>
+  </div>
+  <div class="iconDiv">
+      <ul class="icon">
+          <li tappable (click)="newUser()"><i></i>
+                      <p>新人红包</p>
+                  </li>
+          <li tappable (click)="goSign()"><i></i>
+                      <p>签到好礼</p>
+                  </li>
+          <li tappable (click)="goOldUser()"><i></i>
+                  <p>会员专区</p>
+              </li>
+          <li tappable (click)="gobulk()"><i></i>
+                      <p>拼团活动</p>
+                  </li>
+          <li tappable (tap)="commercial()"><i></i>
+                      <p>商学院</p>
+                  </li>
+      </ul>
+  </div>
+</div>
+

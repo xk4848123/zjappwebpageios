@@ -1,0 +1,106 @@
+page-information {
+    .card-div{
+        background: #FFFFFF;
+        padding: 0.1rem 1rem;
+        margin: 1.2rem 0.8rem 8rem 0.8rem;
+        border-radius: 0.8rem;
+    }
+    .img{
+        height: 6rem;
+        width: 6rem;
+        display: block;
+        margin: 0 auto;
+        float: left;
+    }
+    .hp{
+        font-size: 1rem;
+        margin-top: 0.8rem;
+        margin-left: 11rem;
+       
+    }
+    .col_2{
+        background-color: #ffffff;
+        padding: 1rem;
+        font-size: 1.2rem;
+        height: 4.9rem;
+      }
+      .cards-div{
+        background: rgb(103, 205, 236);
+        margin-top:5px;
+        margin: 1rem 0.6rem 6rem 0.6rem;
+        border-radius: 0.6rem;
+        height:3rem;
+        border:2px dashed #fff
+       
+    }
+    .card-div p{
+        text-align:center;
+        display: table-cell;
+        font-size:1.4rem;
+        color:rgb(255, 255, 255);
+        vertical-align:middle;//垂直居中
+        height:3rem;
+        width:80rem
+    }
+   .col_2_div{
+       height:100%;
+   }
+    .package-status{padding:18px 0 0 0}
+    .package-status .status-list{margin:0;padding:0;margin-top:-5px;padding-left:8px;list-style:none;}
+    .package-status .status-list li{border-left:2px solid #d9d9d9;text-align:left;}
+    .package-status .status-list li:before{ /* 流程点的样式 */
+        content:'';
+        border:3px solid #f3f3f3;
+        background-color:#d9d9d9;
+        display:inline-block;
+        width:10px;
+        height:10px;
+        border-radius:10px;
+        margin-left:-9px;
+        margin-right:10px
+    }
+    .package-status .status-list .latest:before{background-color:rgb(103, 205, 236);border-color:#f8e9e4;}
+    .package-status .status-box{overflow:hidden}
+    .package-status .status-list li{height:auto;}
+    .package-status .status-list{margin-top:-8px}
+    .package-status .status-box{position:relative}
+    .package-status .status-box:before{content:" ";background-color:#f3f3f3;display:block;position:absolute;top:-8px;left:20px;width:10px;height:4px}
+    .package-status .status-list{margin-top:0px;}
+    /* .package-status .status-list .latest{border:none} */
+    /* .package-status .status-list li{margin-bottom:-2px} */  
+    .status-list li:not(:first-child){
+        padding-top:10px;
+    }
+     
+    .status-content-before{
+        text-align:left;
+        margin-left:25px;
+        margin-top:-20px;
+    }
+    .status-content-latest{
+        text-align:left;
+        margin-left:25px;
+        color:rgb(103, 205, 236);
+        margin-top:-20px;
+    }
+    .status-time-before{
+        text-align:left;
+        margin-left:25px;
+        font-size:10px;
+        margin-top:5px;
+        
+    }
+    .status-time-latest{
+        text-align:left;
+        margin-left:25px;
+        color:rgb(103, 205, 236);
+        font-size:10px;
+        margin-top:5px;
+    }
+    .status-line{
+        border-bottom:1px solid #ccc;
+        margin-left:25px;
+        margin-top:10px;
+        
+    }
+}

@@ -1,0 +1,58 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>评价列表</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="choice">
+    <div tappable (click)="goall()" [ngStyle]="{'background-color':type === 'all' ? '#e8550ef5' : '#f3e1db' }">
+      全部
+    </div>
+    <div tappable (click)="gopic()" [ngStyle]="{'background-color':type === 'withpicture' ? '#e8550ef5' : '#f3e1db' }">
+      有图
+    </div>
+    <div tappable (click)="gogood()" [ngStyle]="{'background-color':type === 'good' ? '#e8550ef5' : '#f3e1db' }">
+      好评
+    </div>
+    <div tappable (click)="gososo()" [ngStyle]="{'background-color':type === 'medium' ? '#e8550ef5' : '#f3e1db' }">
+      中评
+    </div>
+    <div tappable (click)="gobad()" [ngStyle]="{'background-color':type === 'bad' ? '#e8550ef5' : '#f3e1db' }">
+      差评
+    </div>
+  </div>
+  <div style="margin-top: 60%" *ngIf="!hasComment">
+    <p style="text-align: center">空空如也～</p>
+  </div>
+  <ion-list *ngIf="hasComment">
+    <ng-container *ngFor="let item of commentArray">
+      <ion-item>
+        <div style="margin-top: 1rem;overflow: auto">
+            <div style="float: left;margin-left: 1rem" *ngIf="item.user!=null">
+                <img onerror="this.src='assets/imgs/user.png'" class="headimg" src="{{config.domain+item.user.headphoto}}">
+                <p class="pname">{{item.user.truename}}</p>
+                <p class="">{{item.createtime}}</p>
+            </div>
+            <div style="float: left;margin-left: 1rem" *ngIf="item.user==null">
+                <img onerror="this.src='assets/imgs/user.png'" class="headimg" src="">
+                <p class="pname">匿名用户</p>
+                <p class="">{{item.createtime}}</p>
+            </div>
+          </div>
+          <p style="margin-top: 0.8rem;margin-left: 0.8rem;margin-bottom: 1rem;overflow: auto;color: black;white-space: normal;">
+            {{item.memo}}
+          </p>
+         <div style="white-space: normal;">
+            <img  *ngFor="let pic of item.productCommentPhotos" style="width: 31%;margin-left: 2%;" src="{{config.domain+pic.photo}}">
+         </div>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doLoadMore($event)" thr>
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+      </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

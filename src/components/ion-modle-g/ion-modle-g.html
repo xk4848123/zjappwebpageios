@@ -1,0 +1,39 @@
+<div class="moudle5">
+  <div class="style1">
+    <h4 class="fz-32">{{title}}</h4>
+  </div>
+  <div class="product">
+    <!-- <ion-row wrap>
+      <ion-col col-6 *ngFor="let p of param" tappable (click)="goDetail(p)">
+       <div class="point">
+        <img src="{{config.domain+p.pic}}" >
+        <p>{{p.productName}}</p>
+        <div class="list-price buy">
+          <span class="price-new"><i>￥</i>{{p.productPrice}}</span>
+          <i class="del">￥<span>{{p.oldPrice}}</span></i>
+        </div>
+       </div>
+      </ion-col>
+    </ion-row> -->
+    <ul>
+      <li *ngFor="let p of paramOdd" tappable (click)="goDetail(p)" class="test2">
+          <img src="{{config.domain+p.pic}}" >
+          <p>{{p.productName}}</p>
+          <div class="list-price buy">
+            <span class="price-new"><i>￥</i>{{p.productPrice}}</span>
+            <i class="del">￥<span>{{p.oldPrice}}</span></i>
+          </div>
+      </li>
+    </ul>
+    <ul>
+        <li *ngFor="let p of paramEven" tappable (click)="goDetail(p)" class="test2">
+            <img src="{{config.domain+p.pic}}" >
+            <p>{{p.productName}}</p>
+            <div class="list-price buy">
+              <span class="price-new"><i>￥</i>{{p.productPrice}}</span>
+              <i class="del">￥<span>{{p.oldPrice}}</span></i>
+            </div>
+        </li>
+      </ul>
+  </div>
+</div>

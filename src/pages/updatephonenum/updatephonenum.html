@@ -1,0 +1,26 @@
+<!--
+  Generated template for the SetpaypasswordPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>更换手机号</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content style="background-color: #eeeeee">
+    <ion-list>           
+      <ion-item>       
+        <h2>{{phoneNum}}</h2>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" [(ngModel)]='verifycode' placeholder="短信验证码"></ion-input>
+        <button id="button" ion-button item-right (tap)="getVerifyCode()" color= "danger">获取验证码</button>
+        <button style="display: none;width: 5rem;" id="time" ion-button item-right color= "danger">{{spareTime}}s 重发</button>
+      </ion-item>
+    </ion-list>
+    <button ion-button block color="danger" class="next" (tap)="next()">下一步</button>
+  </ion-content>
+  

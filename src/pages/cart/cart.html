@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      购物车
+    </ion-title>
+    <!---->
+  <ion-buttons end>
+    <button ion-button (tap)="changeedit()">
+      <span *ngIf="!isEdit">编辑</span>
+      <span *ngIf="isEdit">完成</span>
+    </button>
+  </ion-buttons>
+
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+ 
+    <!-- <div class="cart_spinner" *ngIf="list.length==0 && hasData">
+      <ion-spinner></ion-spinner>
+    </div>   -->
+    
+    <p style="text-align:center; padding-top:80px;" *ngIf="!hasData">您购入车没有数据!</p>
+    <ion-list>
+        <ng-container *ngFor="let p of list">
+          <ion-item>
+              <p>{{p.producerName}}</p>
+          </ion-item>
+          <dl class="cart_list" *ngFor="let item of p.productList">
+              <dt>
+                <ion-checkbox color="danger" [(ngModel)]="item.checked" (ionChange)="changeCarts()"></ion-checkbox>
+                <img [src]="config.domain+item.product.productphotos[0].photo" />
+              </dt>      
+              <dd>
+                  <h2 class="cart_title">{{item.product.productname}}</h2>
+                  <p class="cart_spec1">规格：</p><p class="cart_spec2">{{item.productSpec.specname}}</p>
+                  <div class="cart_info">
+                      <div class="cart_price">
+                          ¥{{item.productSpec.price}}元
+                      </div>      
+                      <div class="cart_num">
+                        <div class="input_left"  tappable (click)="decCount(item)">-</div>
+                        <div class="input_center">
+                            <input type="text"  readonly="readonly" [(ngModel)]="item.productnum" name="num" id="num" />
+                        </div>
+                        <div class="input_right" tappable (click)="incCount(item)">+</div>
+                      </div>
+                  </div>
+              </dd>
+            </dl>
+        </ng-container>
+    </ion-list>
+    <div style="height: 60.8px"></div>
+</ion-content>
+
+<ion-footer *ngIf="hasData" [ngStyle]="{'bottom': isIndex==true ? '50px' : '0px'}">
+  <ion-toolbar *ngIf="!isEdit">
+    <div class="all_price"  (tap)="checkAll()">
+      
+      <ion-checkbox disabled="true" color="danger" tappable (click)=checkAll() [(ngModel)]='isChencked' style="top:0.38rem"></ion-checkbox>
+      全选  　<strong>合计：<p style="color:red;display: inline;">¥{{allPrice}}</p>元</strong>
+    </div>
+    <ion-buttons end>
+      <div color="danger" (tap)="doPay()" class="dopay">
+        去结算
+      </div>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="isEdit">
+    <div class="all_price"  (tap)="checkAll()">
+      
+      <ion-checkbox  color="danger" [(ngModel)]='isChencked' style="top:0.38rem"></ion-checkbox>
+      全选  　
+    </div>
+    <ion-buttons end>
+      <div color="danger" tappable (click)="doDelete()" class="dodelete">
+        删除
+      </div>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

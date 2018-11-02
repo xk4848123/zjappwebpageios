@@ -1,0 +1,70 @@
+page-index-adv {
+    .adv{
+        width:100%;
+        background: #fff;
+        display: inline-block;
+        img{
+            width:100%;
+        }
+    }
+    .iconDiv{
+        overflow: auto;
+    }
+    .icon{
+        overflow: auto;
+        box-sizing: border-box;
+        text-align: center;
+        justify-content: space-between;
+        padding-bottom: 0.454rem !important;
+        padding-top:0.454rem !important;
+        list-style: none;
+        p{
+            font-size: 1.321rem;
+        }
+        li{
+            float: left;
+            width: 20%;
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        li:first-child i{
+            background: url("../assets/imgs/iocon5.png") no-repeat center;
+            background-size: contain;
+            width: 3rem;
+            height: 3rem;
+            display: inline-block;
+        }
+        li:nth-child(2) i{
+            background: url("../assets/imgs/iocon1.png") no-repeat center;
+            background-size: contain;
+            width: 3rem;
+            height: 3rem;
+            display: inline-block;
+        }
+        li:nth-child(3) i{
+            background: url("../assets/imgs/iocon3.png") no-repeat center;
+            background-size: contain;
+            width: 3rem;
+            height: 3rem;
+            display: inline-block;
+        }
+        li:nth-child(4) i{
+            background: url("../assets/imgs/iocon4.png") no-repeat center;
+            background-size: contain;
+            width: 3rem;
+            height: 3rem;
+            display: inline-block;
+        }
+        li:last-child i{
+            background: url("../assets/imgs/iocon2.png") no-repeat center;
+            background-size: contain;
+            width: 3rem;
+            height: 3rem;
+            display: inline-block;
+        }
+    }
+}

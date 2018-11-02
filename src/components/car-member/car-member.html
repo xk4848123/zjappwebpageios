@@ -1,0 +1,53 @@
+<div class="blank" tappable (click)="dimiss()">
+
+</div>
+<div class="modal" #modal>
+ <div class="tcontain">
+    <div class="tone">
+        <div>
+          <img src="{{config.domain+img[0].photo}}"/>
+        </div>
+        <dl>
+          <dt>{{productname}}</dt>
+          <dd>¥
+            <em style="font-size: 1.8rem;">{{price}}</em>
+            <em style="margin-left: 1rem;"><ion-icon style="color:red" ios="ios-redBack"></ion-icon>{{elec/2}}</em>
+           </dd>
+          <span>库存：{{num}}件</span>
+        </dl>
+      </div>
+      <div class="hotlist">
+         <div>
+             <h3 class="search_title search_line">规格</h3>
+         </div>
+           <p>
+               <span *ngFor="let item of productspecs" tappable (click)="choiceSpec(item.id)" [ngStyle]="{'background':item.id === specId ? 'red' : '' }">
+                 {{item.specname}}
+               </span>
+            </p>
+      </div>
+      <div class="tbuyCount">
+        <ion-row>
+            <ion-col col-9>
+              <samp>购买数量：</samp>
+            </ion-col>
+            <ion-col col-1>
+              <button ion-button [disabled]='minus || disabled' (click)="onMinus()" clear>
+                <ion-icon name="remove-circle" color="primary" ></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col col-1>
+              <input [(ngModel)]="buyNumber" readonly  value="1" #input >
+            </ion-col>
+            <ion-col col-1 text-right>
+              <button ion-button [disabled]='add || disabled' (click)="onAdd()" clear>
+                <ion-icon name="add-circle" color="primary"></ion-icon>
+              </button>
+            </ion-col>
+        </ion-row>
+     </div>
+ </div>
+ <div class="tfoot-right">
+    <button class="buy" ion-button (tap)="buynow()">立即购买</button>
+ </div>
+</div>

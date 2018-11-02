@@ -1,0 +1,21 @@
+<!-- Generated template for the AddressmodelComponent component -->
+<div id="hidebg" (tap)="close()"></div>
+
+<div class="addressframe">
+    
+
+            <ion-icon class="closeClass" name="close-circle" (tap)="close()" ></ion-icon>
+            <div class="head">请选择地区</div>
+    <div class="tip">已选择</div>
+    <div class="chooseHead">
+        <ul>
+            <li type="province" id="province">浙江省</li>
+            <li type="city" id="city">杭州市</li>
+            <li type="region" id="region">萧山区</li>
+        </ul>
+    </div>
+    <div class="choose_tip">选择省份</div>
+    <div class="chooseContent">
+        <div [innerHTML]="assembleHTML()"></div>
+    </div>
+</div>

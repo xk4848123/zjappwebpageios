@@ -1,0 +1,175 @@
+<!--
+  Generated template for the UserPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>用户中心</ion-title>
+    <ion-buttons end *ngIf="userInfo">
+      <button ion-button [navPush]='SettingPage'>
+        <ion-icon name='settings'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)" *ngIf="userInfo"> 
+    <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="下拉刷新"
+        refreshingSpinner="circles"
+        refreshingText="刷新..."> 
+    </ion-refresher-content>
+</ion-refresher>
+  <div class="login" *ngIf="!userInfo">
+    <div class="userimg">
+      <img src="assets/imgs/user.png" />
+    </div>
+
+    <div class="login_reg">
+      <button ion-button color="danger" [navPush]='LoginPage'>登录</button>
+      <button ion-button color="danger" (tap)="register()">注册</button>
+    </div>
+
+  </div>
+
+  <ion-list inset *ngIf="userInfo">
+    <ion-item [navPush]='PersonalPage' class="person" *ngIf="userInfo">
+      <div item-left class="avatar">
+        <img [src]="config.domain+userInfo.personDataMap.HeadPhoto" onerror="this.src='assets/imgs/user.png'" class="headimg">
+        <div class="rank">
+          {{rank}}
+        </div>
+      </div>
+      <h2 style="height: 4rem;padding-top: 0.5rem;">用户名:{{userInfo.personDataMap.UserName}}</h2>
+      <p>众健号:{{userInfo.personDataMap.SysID}}</p>
+
+    </ion-item>
+  </ion-list>
+  <div class="transition">
+  </div>
+  <div (tap)="mainEntrance('mywallet')">
+  <div class="interval">
+    我的钱包
+  </div>
+  <ion-grid style="padding: 0;width: 100%;border-radius: 0.5rem;" *ngIf="userInfo">
+    <ion-row class="col_row">
+      <ion-col class="col_1">
+        <span>{{userInfo.personDataMap.RemainElecNum}}</span>
+        <br> 现金币
+      </ion-col>
+      <ion-col class="col_1">
+        <span>{{userInfo.personDataMap.RemainPoints}}</span>
+        <br> 购物币
+      </ion-col>
+      <ion-col class="col_1">
+        <span>{{userInfo.personDataMap.RemainVIPAmount}}</span>
+        <br> 消费积分
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid style="padding: 0;width: 100%;" *ngIf="!userInfo">
+    <ion-row class="col_row">
+      <ion-col class="col_1">
+        <span>0</span>
+        <br> 现金币
+      </ion-col>
+      <ion-col class="col_1">
+        <span>0</span>
+        <br> 购物币
+      </ion-col>
+      <ion-col class="col_1">
+        <span>0</span>
+        <br> 消费积分
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+  <div class="transition">
+  </div>
+  <div class="interval">
+    我的订单
+  </div>
+  <ion-grid style="padding: 0;width: 100%;" >
+    <ion-row class="col_row">
+      <ion-col class="col_2" style="width: 20%;"(tap)="mainEntrance('allorders')">
+        <img src="assets/imgs/myorder.png" />
+        <span>全部订单</span>
+      </ion-col>
+      <ion-col class="col_2" style="width: 20%;" (tap)="mainEntrance('wporders')">
+        <img src="assets/imgs/wp.png" />
+        <span>待付款</span>
+      </ion-col>
+      <ion-col class="col_2" style="width: 20%;" (tap)="mainEntrance('wsorders')">
+        <img src="assets/imgs/ws.png" />
+        <span>待发货</span>
+      </ion-col>
+      <ion-col class="col_2" style="width: 20%;"  (tap)="mainEntrance('wrorders')">
+        <img src="assets/imgs/wr.png" />
+        <span>待收货</span>
+      </ion-col>
+      <ion-col class="col_2" style="width: 20%;" (tap)="mainEntrance('wcorders')">
+        <img src="assets/imgs/wc.png" />
+        <span>待评价</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="transition">
+  </div>
+  <div class="interval">
+    我的常用
+  </div>
+
+  <ion-grid style="padding: 0;width: 100%;">
+    <ion-row class="col_row">
+      <ion-col class="col_3" style="width: 20%;" (tap)="mainEntrance('fans')">
+        <img src="assets/imgs/myfans.png" />
+        <span >我的粉丝</span>
+      </ion-col>
+      <ion-col class="col_3" style="width: 20%;" (tap)="mainEntrance('mycourse')">
+        <img src="assets/imgs/test.png" />
+        <span>我的课程</span>
+      </ion-col>
+      <ion-col class="col_3" style="width: 20%;" (tap)="mainEntrance('callcenter')">
+        <img src="assets/imgs/callcenter.png" />
+        <span>客服中心</span>
+      </ion-col>
+      <ion-col class="col_3" style="width: 20%;" (tap)="mainEntrance('vippresent')">
+        <img src="assets/imgs/vippresent.png" />
+        <span>二送一</span>
+      </ion-col>
+      <ion-col class="col_3" style="width: 20%;" (tap)="mainEntrance('qrcode')">
+        <img src="assets/imgs/mycard.png" />
+        <span>我的名片</span>
+      </ion-col>
+    </ion-row>
+    <ion-row class="col_row">
+      <ion-col class="col_4" style="width: 20%;" (tap)="mainEntrance('waterpurifier')">
+        <img src="assets/imgs/waterpurifier.png" />
+        <span>净水机</span>
+      </ion-col>
+      <ion-col class="col_4" style="width: 20%;" (tap)="mainEntrance('certification')">
+      <div style="position: relative;">
+        <div id="dot_two" class="dot_one"></div>
+        <img src="assets/imgs/auth.png" />
+        <span>实名认证</span>
+        </div>
+      </ion-col>
+      <ion-col class="col_4" style="width: 20%;" (tap)="mainEntrance('proxyApply')">
+        <div style="position: relative;">
+        <div id="dot_one" class="dot_one"></div>
+        <img id="img" src="assets/imgs/proxyapply.png" />
+        </div>
+        <span>申请代理</span>
+      </ion-col>
+      <ion-col class="col_4" style="width: 20%;">
+      </ion-col>
+      <ion-col class="col_4" style="width: 20%;">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

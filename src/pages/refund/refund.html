@@ -1,0 +1,48 @@
+<!--
+  Generated template for the RefundPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>申请退款</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content style="background: #eeeeee;">
+        <ion-grid style="padding: 1px;width: 100%;" >
+            <div class="card-div">
+            <ion-row class="col_row">
+                <ion-col class="col_2" style="width: 100%"  *ngFor="let item of temp.orderlines">
+                    <img class="img" [src]="config.domain+item.photo">
+                    <div class="hp">
+                        <div> {{item.productname}}</div><br  />
+                            <div style="float:right;margin-top:-20px;">{{item.price}}元</div>  
+                    </div>
+                    <br />
+                    <br />
+                    <span class="hp" style="float:right">×{{item.productnum}}</span>
+                </ion-col>
+            </ion-row>
+            <ion-row class="col_row">
+               <ion-col>
+                  <ion-list>
+                      <ion-item>
+                        <ion-label>退款原因</ion-label>
+                        <ion-select [(ngModel)]='getSelectedText' placeholder="至少一项">
+                          <ion-option value="拍错/不喜欢/效果不好">拍错/不喜欢/效果不好</ion-option>
+                          <ion-option value="质量问题/与图片不符">质量问题/与图片不符</ion-option>
+                          <ion-option value="其他">其他</ion-option>
+                        </ion-select>
+                      </ion-item>
+                          <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br /> <br />
+                          <button ion-button   full color="danger" (tap)= "confirm()">提交</button>
+                    </ion-list>
+               </ion-col>
+            </ion-row>
+          </div>   
+            </ion-grid>
+  
+    
+</ion-content>

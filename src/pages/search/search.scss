@@ -1,0 +1,135 @@
+ /*热搜*/
+ page-search{
+     .tsearch{
+         div{
+             div{
+                top:11.5px !important;
+             }
+         }
+     }
+     .tsearch{
+         div{
+             input{
+                height: 37px !important;
+                border-radius: 8px !important;
+             }
+         }
+     }
+     /*列表*/
+     .tbutton{
+        input:focus::-webkit-input-placeholder { color:transparent; }
+        input:focus:-moz-placeholder { color:transparent; }
+        input:focus::-moz-placeholder { color:transparent; }
+        input:focus:-ms-input-placeholder { color:transparent; }
+      }
+     .tlist{
+         height: 10rem;
+         img{
+             width: 7.3rem;
+             height: 7.3rem;
+         }
+         h2{
+             margin: 0 0 3rem;
+         }
+     }
+     .tcl{
+       color: red;     
+     }
+     .tpn{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 60%;
+        font-size: 16px;
+     }
+    /*图标*/
+    .ticon{
+       position: relative;
+       left: 80%; 
+    }
+    .search_line{
+        display: inline;
+    }
+    .search_title{
+        font-size: 1.4rem;
+        font-weight: bold;
+        padding:.5rem 0px;
+        margin:0px;    
+    }
+    .hotlist{
+    
+        padding:.5rem;
+    }
+    .hotlist p{
+        padding:1rem 0px;
+    }
+    
+    .hotlist span{
+        padding:.5rem 1rem;
+        background: #eee;
+        border-radius: .5rem;
+        margin:.5rem;
+        display: inline-block;
+    }
+    
+    .history{
+        border-top:10px solid #eee;
+        padding:.5rem;
+        font-size: 1.4rem;
+    }
+
+
+
+//列表
+
+.sub_header{
+
+    height: 4rem;
+    line-height: 4rem;
+    position: fixed;
+    // top:4.3rem;
+    width: 100%;
+    border-bottom:1px solid #eee;
+    display: flex;
+    z-index: 2;
+    background: #fff;
+
+    div{
+        flex: 1;
+        text-align: center;
+        position: relative;
+        font-size: 1.7rem;
+    }
+    .up,.down{
+        padding-right: 15px; 
+    }
+    div::before,
+    div::after{
+        position: absolute;
+        right: 35%;
+        z-index: 1;  
+    }
+    .up::before{
+        top: -0.5rem;
+        content:url("../assets/icon/upR.png");
+    }
+    .up::after{
+        top: 0.2rem;
+        content:url("../assets/icon/down.png");
+    }
+    .down::before{
+        top: -0.5rem;
+        content:url("../assets/icon/up.png");
+    }
+    .down::after{
+        top: 0.2rem;
+        content:url("../assets/icon/downR.png");
+    }
+}
+
+.list_content .list-ios[inset]{
+
+    margin-top:4rem!important;
+}
+}
+  

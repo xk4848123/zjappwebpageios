@@ -1,0 +1,133 @@
+<!--
+  Generated template for the MywalletPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>我的钱包</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background: #eeeeee;">
+  <!-- <div style="background-color: #7c97ff;position: relative;height: 20.7rem;"> -->
+      <div style="background-color: #f53d3d;position: relative;height: 20.7rem;">
+  <div class="rank_parent_div">
+
+  <div class="img_div" id="templateDiv">
+      <!-- assets/imgs/free_dark@2x.png -->
+  <img  [src]="imgs.img1">
+  <span>免费</span>
+  </div>
+  <div class="update_line"></div>
+
+  <div class="img_div">
+  <img  [src]="imgs.img2">
+  <span>绿色</span>
+  </div>
+  <div class="update_line"></div>
+
+
+  <div class="img_div">
+  <img  [src]="imgs.img3" style="margin-bottom:3px;">
+  <span>VIP</span>
+  </div>
+  <div class="update_line"></div>
+  
+  <div class="img_div">
+  <img  [src]="imgs.img4">
+  <span>准代</span>
+  </div>
+  <div class="update_line"></div>
+
+  <div class="img_div">
+  <img  [src]="imgs.img5">
+  <span>代理</span>
+  </div>
+  </div>
+  <div class="greenchannel_time_limit" *ngIf="userInfo.isGCmember">绿色通道到期时间：{{userInfo.GCmemberExpireTime}}</div>
+  <div class="greenchannel_time_limit" *ngIf="!userInfo.isGCmember">小主，加油升级哦！</div>
+  <div class="update_div" [navPush]='UpdaterankPage'>
+  <img src="assets/imgs/upgrade@2x.png">
+  </div>
+  <!-- <div style="background-color: white;width: 80%;height: 10rem;position: absolute;top: 5rem;">
+  </div> -->
+  <div id="treasure">
+
+
+  <div class="title_div">
+    <img  src="assets/imgs/bg_l@2x.png" style="height: 60%;vertical-align:middle;">
+    <div style="height: 5rem;display: inline-block;vertical-align:middle;color: gold;font-size: 1.8rem;">我的财富</div>
+    <img  src="assets/imgs/bg_r@2x.png" style="height: 60%;vertical-align:middle;">
+  </div>
+
+
+  <div class="line_div"></div>
+
+
+  <div class="mygold">
+  
+  <div style="padding: 1rem;">
+  <div style="font-weight: bold;font-size: 2.5rem;text-align: center" *ngIf="userInfo.personDataMap">￥{{userInfo.personDataMap.RemainElecNum}}</div>
+  <div style="text-align: center;font-size: 1.8rem;">现金币</div>
+  </div>
+  <div class='treasure_img_div_parent'>
+  <div class="treasure_img_div" [navPush]='RechargePage'>
+      <img  src="assets/imgs/recharge.png">
+      <span>充值</span>
+      </div>
+      <div class="treasure_img_div" (tap)="transferElec()">
+      <img  src="assets/imgs/transferthepossessionof.png">
+      <span>转让</span>
+      </div>
+      <div class="treasure_img_div" [navPush]='WithdrawPage'>
+      <img  src="assets/imgs/withdrawals.png">
+      <span>提现</span>
+      </div>
+      <div class="treasure_img_div" (tap)="viewLog('elec')">
+      <img  src="assets/imgs/documentaryfilm.png">
+      <span>记录</span>
+      </div>
+    </div>
+  </div>
+  <div class="card-div" *ngIf="userInfo.personDataMap">
+  <div class="card-line" (tap)="viewLog('points')">
+      <img  src="assets/imgs/money.png">
+      <span class="head-span">购物币</span>
+      <span class="content-span">{{userInfo.personDataMap.RemainPoints}}</span>
+      <ion-icon class="arrows" name="ios-arrow-forward"></ion-icon>
+    </div>
+    <div class="line-div"></div>
+    <div class="card-line" (tap)="viewLog('coupon')">
+        <img  src="assets/imgs/red envelopes.png">
+        <div class="line-div"></div>
+        <span class="head-span">红包</span>
+        <span class="content-span">{{userInfo.personDataMap.Coupon}}</span>
+        <ion-icon class="arrows" name="ios-arrow-forward"></ion-icon>
+      </div>
+      <div class="line-div"></div>
+      <div class="card-line" (tap)="viewLog('vip')">
+          <img  src="assets/imgs/integral.png">
+          <span class="head-span">消费积分</span>
+          <span class="content-span">{{userInfo.personDataMap.RemainVIPAmount}}</span>
+          <ion-icon class="arrows" name="ios-arrow-forward"></ion-icon>
+        </div>
+        <div class="line-div"></div>
+        <div class="card-line" *ngIf="userInfo.personDataMap.Lev == 3" (tap)="viewSplit()">
+            <img  src="assets/imgs/shunt.png">
+            <span class="head-span">分流额度</span>
+            <span class="content-span">{{userInfo.personDataMap.RemainStream}}</span>
+            <ion-icon class="arrows" name="ios-arrow-forward"></ion-icon>
+          </div>
+          <div class="line-div" *ngIf="userInfo.personDataMap.Lev == 3"></div>
+          <div class="card-line">
+              <img  src="assets/imgs/currency.png">
+              <span class="head-span">个人分值</span>
+              <span class="content-span">{{userInfo.personDataMap.TotalCost}}</span>
+            </div>
+          </div>
+</div>
+</div>
+</ion-content>
+

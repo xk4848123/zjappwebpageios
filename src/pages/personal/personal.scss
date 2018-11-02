@@ -1,0 +1,49 @@
+page-personal{
+    .card-div{
+        background: #FFFFFF;
+        padding: 0.2rem 1rem;
+        margin: 1.2rem 0.8rem 8rem 0.8rem;
+        border-radius: 0.8rem;
+        img{
+    
+            width: 4rem;
+            height: 4rem;
+            border-radius: 4rem;
+        }
+    
+    }
+    .clear {
+        clear: both;
+    }
+    .card-line{
+        text-align: center;
+        height: 3.8rem;
+        line-height: 3.8rem;
+        position: relative;
+    }
+    .card-line-head{
+        text-align: center;
+        height: 5rem;
+        line-height: 5rem; 
+    }
+    .line-div{
+        border-top: 0.1rem solid #eeeeee
+    }
+    .arrows{
+        position: absolute;
+        right:0.1rem;
+        top:1.2rem; 
+    }
+    .head-span{
+        float: left;
+    }
+    .content-span{
+        position: absolute;
+        right:1.5rem;
+    }
+    .login_btn{
+        width: 80%;
+        margin: 0px auto;
+    }
+    
+}

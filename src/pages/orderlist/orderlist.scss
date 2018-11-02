@@ -1,0 +1,78 @@
+page-orderlist {
+.address{
+    width:100%;
+    background-color: #eeeeee;
+    margin: 18px 0 0 0;
+    border:3px dashed;
+    border-color: #f53d3d;
+    padding: 10px 5px 10px 5px;
+    line-height: 30px;
+    span{
+        color: #555555;
+        
+    }
+}
+
+.head{
+    margin: 20px 5px 10px 5px;
+    color: #f53d3d;
+    font-weight:bold;
+}
+
+.transition{
+    background-color: #eeeeee;
+    height: 0.8rem;
+}    
+
+.col-cc{
+    padding:0.8rem;
+     border: 0.1rem solid #bdbaba;
+      border-radius:1.2rem; 
+      background-color:#fff; 
+      margin:18px 5px 10px 5px;
+      font-size:1.4rem;
+      color: #333333;
+      float: right;
+        
+}
+.center{
+    margin:18px 0 18px 0;
+    position: relative;
+    height: 90px;
+    img{
+        width: 75px;
+        height: 75px;
+        position: absolute;
+        left: 5px;
+        top: 7.5px;
+    }
+    .productName{
+        position: absolute;
+        top: 9px;
+        left: 85px;
+        right: 85px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4; //文本行数
+        overflow: hidden;
+    }
+    .productPrice{
+        position: absolute;
+        top: 9px;
+        height: 20px;
+        line-height: 20px;
+        right: 5px;
+
+    }
+    .productNum{
+        position: absolute;
+        top:29px;
+        height: 20px;
+        line-height: 20px;
+        right: 5px;
+        span{
+            color: #666666;
+        }
+    }
+}
+}

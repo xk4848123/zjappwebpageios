@@ -1,0 +1,90 @@
+<!--
+  Generated template for the OrderlistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>订单详情</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+
+    <div class="head">
+        <span *ngIf="tempData.curstatus == -3">退货成功</span>
+        <span *ngIf="tempData.curstatus==-2">订单已取消</span>
+        <span *ngIf="tempData.curstatus==-1">等待买家付款</span>
+        <span *ngIf="tempData.curstatus==0">待发货</span>
+        <span *ngIf="tempData.curstatus==1">待收货</span>
+        <span *ngIf="tempData.curstatus==2">待评价</span>
+        <span *ngIf="tempData.curstatus == 3">完成</span>
+        <span *ngIf="tempData.curstatus == 4">申请退货中</span>
+        <span *ngIf="tempData.curstatus == 5">申请退款中</span>
+    </div>
+
+    <div class="address">
+        <div>
+            {{tempData.receivername}}&nbsp;<span>{{tempData.receiverphone}}</span>
+        </div>
+        <div>
+            {{tempData.provincename}}{{tempData.cityname}}{{tempData.regionname}}{{tempData.address}}
+        </div>
+    </div>
+
+    <div class="center" *ngFor="let item1 of tempData.orderlines">
+            <img [src]="config.domain+item1.photo" />
+            <div class="productName">{{item1.productname}}</div>
+            <div class="productPrice">
+                ￥<span>{{item1.price}}</span>
+            </div>
+            <div class="productNum">
+                <span>x{{item1.productnum}}</span>
+            </div>
+        </div>
+    <ion-list>
+        <ion-item style="font-size:14px">商品总额<span style="float:right;font-size:18px;color:#f53d3d;" class="cc">￥{{tempData.totalamount}}</span></ion-item>
+        <ion-item style="font-size:14px">运费<span style="float:right;color:#f53d3d;font-size:14px" class="cc">包邮</span></ion-item>
+        <ion-item style="font-size:14px">现金红包抵扣<span style="float:right;color:#f53d3d;font-size:14px" class="cc">{{tempData.usecoupon}}</span></ion-item>
+        <ion-item style="font-size:14px">现金币抵扣<span style="float:right;color:#f53d3d;font-size:14px" class="cc">{{tempData.useelecnum}}</span></ion-item>
+        <ion-item style="font-size:14px">购物币抵扣<span style="float:right;color:#f53d3d;font-size:14px" class="cc">{{tempData.usevipremainnum}}</span></ion-item>
+        <ion-item style="font-size:14px">消费积分抵扣<span style="float:right;color:#f53d3d;font-size:14px" class="cc">{{tempData.freight}}</span></ion-item>
+        <ion-item style="font-size:14px">实付款<span style="float:right;color:#f53d3d;font-size:14px" class="cc">￥{{tempData.realpay}}</span></ion-item>
+
+        <ion-item style="font-size:14px">订单号<p style="float:right" class="cc">{{tempData.orderno}}</p>
+        </ion-item>
+        <div *ngIf="tempData.curstatus==-3">
+            <button class="col-cc">完成</button>
+        </div>
+        <div *ngIf="tempData.curstatus==-2">
+            <button class="col-cc">订单已取消</button>
+        </div>
+        <div *ngIf="tempData.curstatus==-1">
+            <button class="col-cc" (tap)="pushcancelOrder()">取消订单</button>
+            <button class="col-cc" (tap)="payNow()">立即支付</button>
+        </div>
+        <div *ngIf="tempData.curstatus==0">
+            <button class="col-cc" (tap)="pushrefund()">申请退款</button>
+        </div>
+        <div *ngIf="tempData.curstatus==1">
+            <button class="col-cc" (tap)="information()">查看物流</button>
+            <button class="col-cc" (tap)="pushsale()">申请退货</button>
+            <button class="col-cc" (tap)="confirmorder()">确认收货</button>
+        </div>
+        <div *ngIf="tempData.curstatus==2">
+            <button class="col-cc">评价</button>
+        </div>
+        <div *ngIf="tempData.curstatus==3">
+            <button class="col-cc">完成</button>
+        </div>
+        <div *ngIf="tempData.curstatus==4">
+            <button class="col-cc">申请退货中</button>
+        </div>
+        <div *ngIf="tempData.curstatus==5">
+            <button class="col-cc">申请退款中</button>
+        </div>
+    </ion-list>
+
+
+</ion-content>

@@ -1,0 +1,78 @@
+page-members-product {
+    .sub_header{
+        height: 4rem;
+        line-height: 4rem;
+        position: fixed;
+        // top:4.3rem;
+        width: 100%;
+        border-bottom:1px solid #eee;
+        display: flex;
+        z-index: 2;
+        background: #fff;
+    
+        div{
+            flex: 1;
+            text-align: center;
+            position: relative;
+            font-size: 1.7rem;
+        }
+        .up,.down{
+            padding-right: 15px; 
+        }
+        div::before,
+        div::after{
+            position: absolute;
+            right: 35%;
+            z-index: 1;  
+        }
+        .up::before{
+            top: -0.5rem;
+            content:url("../assets/icon/upR.png");
+        }
+        .up::after{
+            top: 0.2rem;
+            content:url("../assets/icon/down.png");
+        }
+        .down::before{
+            top: -0.5rem;
+            content:url("../assets/icon/up.png");
+        }
+        .down::after{
+            top: 0.2rem;
+            content:url("../assets/icon/downR.png");
+        }
+    } 
+    .list_content { 
+        .tlist{
+            height: 10rem;
+            img{
+                width: 7.3rem;
+                height: 7.3rem;
+            }
+            h2{
+                margin: 0 0 3rem;
+            }
+        }
+        .tcl{
+          color: red;     
+        }
+        .tpn{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 60%;
+            font-size: 16px;
+         }
+        .list-ios[inset]{
+
+            margin-top:4rem!important;
+            
+        }
+        .label-ios{
+
+            h2{
+                font-size: 1.4rem;
+            }
+        }
+    }
+}

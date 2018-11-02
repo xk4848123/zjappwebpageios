@@ -1,0 +1,160 @@
+page-mywallet {
+    .rank_parent_div{
+        position: relative;
+        height: 5rem;
+        width: 100%;
+    }
+    .update_line{
+        border-top: 0.1rem solid #eeeeee;
+        display: inline-block;
+        width: 1.6rem;
+        position: absolute;
+    }
+
+
+    .rank_parent_div > .img_div{
+        position: absolute;
+        display: inline-block;
+        width: 26px;
+        text-align: center;
+        color: #eeeeee;
+    }
+    .rank_parent_div > .img_div:first-child{
+        left: 3rem;
+    }
+    .rank_parent_div > .img_div:nth-child(3){
+        left: 6rem;
+    }
+    .rank_parent_div > .img_div:nth-child(5){
+        left: 9rem;
+    }
+    .rank_parent_div > .img_div:nth-child(7){
+        left: 12rem;
+    }
+    .rank_parent_div > .img_div:nth-child(9){
+        left: 15rem;
+    }
+    .img_div span{
+        width:100%;
+        word-break:keep-all;             /* 不换行 */
+        white-space:nowrap;            /* 不换行 */
+        overflow:hidden;                  /* 内容超出宽度时隐藏超出部分的内容 */
+        text-overflow:ellipsis;            /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+        font-size: 1.5rem;
+    }
+    .treasure_img_div img{
+        height: 32px;
+    }
+    .greenchannel_time_limit{
+        margin-top: 4rem;
+        margin-bottom: 1.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        color: #eeeeee;
+        font-size: 1.3rem;
+    }
+
+    .rank_title{
+        color: #eeeeee;
+    }
+
+    .update_div img{
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .update_div{
+       padding-bottom: 2rem;
+       margin: auto;
+       width: 8rem;
+       height: 4.5rem;
+    }
+    .line_div{
+        border-top: 0.1rem solid #eeeeee;
+        width: 90%;
+        margin: auto;
+    
+    }
+    .mygold{
+        width: 90%;
+        background-color: white;
+        margin:auto;
+        border-radius: 0 0 2rem 2rem;
+    }
+   
+    #treasure .treasure_img_div{
+        position: absolute;
+        // display: inline-block;
+        width: 4.8rem;
+        text-align: center;
+    }
+
+    #treasure .treasure_img_div_parent{
+        position: relative;
+    
+    }
+    #treasure .treasure_img_div span{
+        width:100%;
+        word-break:keep-all;             /* 不换行 */
+        white-space:nowrap;            /* 不换行 */
+        overflow:hidden;                  /* 内容超出宽度时隐藏超出部分的内容 */
+        text-overflow:ellipsis;            /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+        font-size: 1.6rem;
+    }
+    #treasure .title_div {
+        text-align: center;
+        background-color: white;
+        height: 5rem;margin:auto;
+        line-height: 5rem;
+        width: 90%;
+        border-radius: 2rem 2rem 0 0 ;
+        
+    }
+    //card begin
+    .card-line{
+        text-align: center;
+        height: 60px;
+        line-height: 60px;
+        position: relative;
+    }
+    .head-span{
+        float: left;
+        color: #333333;
+        font-size: 1.6rem;
+    }
+    .card-div{
+        background: #FFFFFF;
+        padding: 0.2rem 1rem;
+        margin-top: 1.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin: 1.5rem auto 1.5rem auto;
+        border-radius: 0.8rem;
+        width: 90%;
+    }
+    .line-div{
+        border-top: 0.1rem solid #eeeeee
+    }
+    //card stop
+    .arrows{
+        position: absolute;
+        right:0.1rem;
+        top:22px; 
+    }
+    .content-span{
+        position: absolute;
+        right:1.5rem;
+        color: #333333;
+        font-size: 1.6rem;
+    }
+    .card-line img{
+        height: 26px;
+        width: 26px;
+        float: left;
+        margin-top: 18px;
+        margin-right: 5px;
+    }
+    
+}

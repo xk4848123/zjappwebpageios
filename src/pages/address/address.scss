@@ -1,0 +1,63 @@
+page-address {      
+.head
+    {
+        height:36px;
+        width:36px;
+        line-height: 36px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: #cccccc;
+        color: white;
+        border-radius:50%;
+    }
+
+  h2 {
+    display: inline-block;
+    margin-bottom:0!important;
+  }
+
+
+
+  .address{
+    white-space:normal;
+    word-wrap:break-word;
+    > span:first-child{
+        font-size: 15px;
+        background-color: #f53d3d;
+        padding:1px 2px 1px 2px;
+    }
+    > span:nth-child(2){
+        font-size: 18px;
+    }
+    > span:nth-child(3){
+        font-size: 17px;
+      }
+      > span:nth-child(4){
+        font-size: 16px;
+      }
+    > span:last-child{
+        font-size: 15.5px;
+      }
+}
+ .button{
+    height:36px;
+    width:36p;
+    line-height:36px;
+    margin-left: 30px;
+    text-align: center;
+    color: #cccccc;
+ }
+ .name{
+     margin-bottom: 3px;
+     p{
+        font-size: 16px!important;
+        display: inline-block;
+    }
+    h2{
+        font-size: 18px!important;
+   
+    }
+ }
+
+  
+}

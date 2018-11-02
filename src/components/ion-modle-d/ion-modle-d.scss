@@ -1,0 +1,49 @@
+ion-modle-d {
+    .style1{
+        background: url("../assets/imgs/title1.png") no-repeat center;
+        background-size: contain;
+        // margin-bottom: -0.5rem;
+        // margin-top: -1rem;
+    }
+    .style2{
+        a{
+            overflow: auto;
+            img{
+                display: -webkit-box;
+            }
+        }
+    }
+    .fz-32{
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: linear-gradient(to right,#F55555,#F55555,#FCCF31 60%,#FCCF31);
+        display: inline-block;
+        padding: 0 0.46rem;
+        line-height: 1.82rem;
+        letter-spacing: 0.217rem;
+        font-size: 1.53rem !important;
+        font-weight: normal;
+    }
+    .module4{
+        text-align: center;
+        overflow: auto;
+        div:nth-child(2){
+            div:last-child{
+                width: 49.8%;
+                float: right;
+                margin: 0;
+                padding: 0;  
+            }
+            div:first-child{
+                width: 49.8%;
+                float: left;
+                margin: 0;
+                padding: 0;  
+            }
+        } 
+        img{
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,77 @@
+page-fandetail {
+
+    .card-line-head{
+        background-color: #fff;
+        height: 80px;
+        position: relative;
+        margin: 5px;
+        border-radius: 8px;
+
+        img{
+            position: absolute;
+            height: 48px;
+            width: 48px;
+            border-radius: 20px;
+            top: 16px;
+            left: 16px;
+        }
+        .center_content{
+            height: 80px;
+            position: absolute;
+            left: 70px;
+            line-height: 80px;
+
+        }
+        .right_content{
+            height: 60px;
+            line-height: 80px;
+            position: absolute;
+            top:20px;
+            right: 16px;
+            color: #f53d3d;
+            span{
+                font-size: 20px;
+               
+            }
+          
+        }
+    }
+
+    .up{
+        background-color: #aaaaaa;
+        color: #fff;
+        position: fixed;
+        z-index: 10;
+        text-align: center;
+        top:200px;
+        height: 35px;
+        line-height: 35px;
+        opacity:0.7;
+        border-radius: 10px 10px 0 0;
+        width: 30px;
+    }
+    .center{
+        background-color: #aaaaaa;
+        color: #fff;
+        position: fixed;
+        z-index: 10;
+        top:235px;
+        height: 35px;
+        line-height: 35px;
+        opacity:0.7;
+        width: 30px;
+
+    }
+    .down{
+        background-color: #aaaaaa;
+        color: #fff;
+        position: fixed;
+        z-index: 10;
+        top:270px;
+        height: 35px;
+        line-height: 35px;
+        opacity:0.7;
+        width: 30px;
+        border-radius: 0 0 10px 10px;
+    }
+}

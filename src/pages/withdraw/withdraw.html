@@ -1,0 +1,46 @@
+<!--
+  Generated template for the WithdrawPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>现金币提现</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content style="background: #eeeeee">
+  <ion-list style="margin: 1rem 0 2rem 0;" *ngIf="!obj">
+    <ion-item (tap)= "chooseAcount()">
+      <h2>请选择提现账号</h2>
+    </ion-item>
+  </ion-list>
+
+  <ion-list style="margin: 1rem 0 2rem 0;" *ngIf="obj">
+      <ion-item *ngIf="obj.type == 1" (tap)= "chooseAcount()">
+          <ion-avatar item-start>
+              <img src="assets/imgs/alipay.png">
+            </ion-avatar>
+            <h2>{{obj.data.name}}({{obj.data.account}})</h2>
+         </ion-item> 
+           <ion-item *ngIf="obj.type == 3" (tap)= "chooseAcount()">
+              <ion-avatar item-start>
+                  <img [src]="config.domain+obj.data.banklogo">
+                </ion-avatar>
+                <h2>{{obj.data.name}}({{obj.data.account}})</h2>
+              </ion-item>
+    </ion-list>
+
+  <ion-list>
+      <ion-item>
+          <ion-label>提现金额（元）：</ion-label>
+          <ion-input type="number" [(ngModel)]="txmoney" placeholder="可提现金额{{maxtxmoney}}"></ion-input>
+        </ion-item>
+        <ion-item>
+           <p style="color: #f53d3d;">手续费：3%</p>
+          </ion-item>
+    </ion-list>
+
+    
+    <button ion-button block color="danger" class="executeButton" (tap)="execute()">确认提现</button>
+</ion-content>

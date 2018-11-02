@@ -1,0 +1,1 @@
+declare let global_wxFunciton:any;

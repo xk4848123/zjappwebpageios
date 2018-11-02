@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-searchbar class="tsearch" (tap)="goSearch()"></ion-searchbar>
+
+</ion-header>
+
+<ion-content>
+  <div class="my_content">
+    <div class="left">
+      <div *ngFor="let item of leftCate" (tap)="getRightCateData(item['id'])" [ngClass]="{'changecolor':leftId == item.id}">
+        <div [ngStyle]="{'display':leftId === item.id ? 'block' : 'none' }"></div>
+        <span>{{item.categoryname}}</span>
+      </div>
+    </div>
+    <div class="right">
+      <img src="assets/imgs/slide03.png" />
+      <div style="box-shadow:-1px 2px 1px #eeeeee;margin: 5px;border-radius: 5px;">
+        <div class="box">
+          <div class="every_box" *ngFor="let item of rightCate" [navPush]='ProductlistPage' [navParams]="{'id':item['id'],'categoryname':item['categoryname']}">
+            <div class="img_div">
+              <img [src]="config.domain+item.icon" />
+            </div>
+            <div class="font_div">{{item.categoryname}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

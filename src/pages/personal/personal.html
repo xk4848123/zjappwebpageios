@@ -1,0 +1,46 @@
+<!--
+  Generated template for the PersonalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>账户管理</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content style="background: #eeeeee;">
+  <div class="card-div">
+    <div class="card-line-head" (tap)="changeHead()">
+      <span class="head-span">头像</span>
+      <img [src]="config.domain+userInfo.headPhoto" onerror="this.src='assets/imgs/user.png'" style="float: right;margin-top: 0.5rem;">
+    </div>
+    <div class="line-div"></div>
+    <div class="card-line" (tap)="setAttr(1)">
+      <span class="head-span">昵称</span>
+      <span class="content-span">{{userInfo.nickName}}</span>
+      <ion-icon class="arrows" name="ios-arrow-forward"></ion-icon>
+    </div>
+    <div class="line-div"></div>
+    <div class="card-line" *ngIf="userInfo.beInviteCode != 0">
+      <span class="head-span">推荐人</span>
+      <span class="content-span">{{userInfo.beInviteCode}}</span>
+
+    </div>
+    <div class="card-line" *ngIf="userInfo.beInviteCode == 0" (tap)="setAttr(2)">
+      <span class="head-span">推荐人</span>
+      <span class="content-span">去设置</span>
+      <ion-icon class="arrows" name="ios-arrow-forward"></ion-icon>
+    </div>
+    <div class="line-div"></div>
+    <div class="card-line" [navPush]='UpdatephonenumPage'>
+      <span class="head-span">更换手机号</span>
+      <span class="content-span">{{userInfo.userName}}</span>
+      <ion-icon class="arrows" name="ios-arrow-forward"></ion-icon>
+    </div>
+  </div>
+
+  <button ion-button block color="danger" class="login_btn" (tap)="loginOut()">退出登录</button>
+</ion-content>

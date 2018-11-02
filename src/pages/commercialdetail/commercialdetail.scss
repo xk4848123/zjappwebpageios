@@ -1,0 +1,26 @@
+page-commercialdetail {
+    #sub_header{
+        line-height: 3.5rem;
+        width: 100%;
+        border-bottom:1px solid rgb(223, 221, 221);
+        background: #fff;
+        font-size: 1.2rem
+    }
+    .img{
+        img{
+            width:100%;
+            height: 200px;
+        }
+    }
+    .transition{
+        background-color: #eeeeee;
+        height: 0.6rem;
+    }
+    .col-demo-div{
+       line-height: 2rem;
+       padding: 5px 0;
+    }
+    p{
+        margin-top:1rem;
+    }
+}

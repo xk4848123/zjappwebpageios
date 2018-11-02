@@ -1,0 +1,16 @@
+<div class="module3">
+  <div class="style1">
+    <h4 class="fz-32">{{title}}</h4>
+  </div>
+  <div class="style2">
+      <ion-grid style="padding: 0">
+          <ion-row wrap>
+            <ion-col col-6 tappable *ngFor="let c of param" (click)="goDetail(c)" style="padding: 0">
+              <div>
+                <img src="{{config.domain+c.pic}}">
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+  </div>
+</div>

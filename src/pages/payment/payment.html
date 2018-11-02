@@ -1,0 +1,46 @@
+<!--
+  Generated template for the PaymentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+
+
+  https://ionicframework.com/docs/components/#radio
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>选择支付方式</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+        <ion-list inset radio-group [(ngModel)]="way">
+            <ion-item-divider >
+              支付方式
+            </ion-item-divider>           
+            
+            <ion-item>
+                <ion-avatar item-start>
+                  <img src="assets/imgs/weixinpay.png">
+                </ion-avatar>            
+                <ion-label>微信支付(暂未开通)</ion-label>  
+                <ion-radio value="1"></ion-radio>
+            </ion-item>
+            <ion-item>
+                <ion-avatar item-start>
+                  <img src="assets/imgs/alipay.png">
+                </ion-avatar>
+                <ion-label>支付宝支付</ion-label>  
+                <ion-radio checked="true" value="2"></ion-radio>                
+            </ion-item>
+
+            <ion-item>
+            </ion-item>
+      </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div class="payment" (tap) = "pay()">
+      支付       
+    </div>
+  </ion-toolbar>
+</ion-footer>

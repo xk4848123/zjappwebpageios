@@ -1,0 +1,27 @@
+page-moneyrecord {
+    .parent{
+        width: 90%;
+        margin: 10px auto;
+        height: 90px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        .up{
+            font-size: 16px;
+            height: 45px;
+        }
+        .down{
+            height: 25px;
+            width: 100%;
+            line-height: 30px;
+            >:first-child{
+                font-size: 20px;
+                color: #f53d3d;
+            }
+            >:last-child{
+                font-size: 15px;
+                float: right;
+            }
+        }
+    }
+}

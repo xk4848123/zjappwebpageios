@@ -1,0 +1,96 @@
+page-orders {
+    #sub_header{
+        height: 4rem;
+        line-height: 3.5rem;
+        top:4.3rem;
+        width: 100%;
+        div{
+            flex: 1;
+            text-align: center;
+            color: #555555;
+        }
+    }
+
+    .transition{
+        background-color: #eeeeee;
+        height: 0.6rem;
+    }    
+
+
+
+
+    .cardDiv{
+     width: 94%;
+     margin: 15px auto;
+     background-color: #fff;
+     border-radius: 8px;
+
+     .head{
+        padding:5px;
+        font-weight:bold;
+        text-align: left;
+        color:#f53d3d;
+    }
+    .center{
+        position: relative;
+        height: 90px;
+        img{
+            width: 75px;
+            height: 75px;
+            position: absolute;
+            left: 5px;
+            top: 7.5px;
+        }
+        .productName{
+            position: absolute;
+            top: 9px;
+            left: 85px;
+            right: 85px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2; //文本行数
+            overflow: hidden;
+        }
+        .productPrice{
+            position: absolute;
+            top: 9px;
+            height: 20px;
+            line-height: 20px;
+            right: 5px;
+
+        }
+        .productNum{
+            position: absolute;
+            top:29px;
+            height: 20px;
+            line-height: 20px;
+            right: 5px;
+            span{
+                color: #666666;
+            }
+        }
+    }
+    .foot{
+        padding:5px 5px;
+        text-align: right;
+        span{
+            font-size: 20px;
+        }
+    }
+    .btnDiv{
+        height: 35px;
+        margin: 10px 0 0 0;
+        .btn{
+            border-radius: 15px;
+            border: 1px solid #666666;
+            float: right;
+            margin: 0 5px;
+            padding: 5px;
+            color: #333333;
+        }
+    }
+  
+    }
+  
+   
+}

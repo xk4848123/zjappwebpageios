@@ -1,0 +1,92 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>确认订单</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="allcontent" (onresize)="test()">
+  <div class="taddress" tappable (click)="toAddress()">
+      <ion-icon ios="ios-pin-outline" md="ios-pin-outline" class="addressicon"></ion-icon>
+      <div class="tcontent">
+          <div class="tjian">
+              <ion-icon ios="ios-arrow-dropright" md="md-arrow-dropright"></ion-icon>
+          </div>
+        <p class="tname">{{addressName}}</p>
+        <p class="tphone">{{addressPhone}}</p>
+        <p class="tadd">{{address}}</p>
+        <p class="tadddetail">{{addressDetail}}</p>
+      </div>
+  </div>
+  <div class="tproduct">
+    <ion-list style="margin: 0" *ngFor = "let item of productArray">
+      <ion-item style="border-top: none">
+            <ion-thumbnail  item-left>
+              <img [src]="config.domain+item.productphotos[0].photo"/>            
+            </ion-thumbnail>
+            <h2 style="font-size: 1.5rem">{{item.productname}}</h2>
+            <p style="margin-bottom: 0.3rem;">规格：{{item.specName}}</p>
+            <h2 style="display: inline;color: red">¥{{item.specPrice}}</h2>
+            <p style="float: right;margin-right: 2rem">
+              <ion-icon ios="ios-close" md="md-close"></ion-icon><em style="font-size: 1.7rem">{{item.buynum}}</em>
+            </p>
+      </ion-item>
+    </ion-list>
+    <ion-list style="margin: 0">
+      <ion-item>
+          <p style="float:left;">邮费</p>
+          <p style="float: right;">包邮</p>
+      </ion-item>
+      <ion-item>
+          <ion-input style="font-size: 1.4rem" placeholder="买家留言" (ionBlur)="blurInput()" (ionFocus)="focusInput()" [(ngModel)]="memo">
+
+          </ion-input>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div style="border-bottom: 8px solid #e3e3e3">
+    <ion-list style="margin: 0">
+      <ion-item>
+          <ion-label style="font-size: 1.4rem">可用现金红包{{remainCoupon}}</ion-label>
+          <ion-toggle [(ngModel)]="redBak" (tap)="clickred()"></ion-toggle>
+      </ion-item>
+      <ion-item>
+          <ion-label style="font-size: 1.4rem">可用购物币{{remainPay}}</ion-label>
+          <ion-toggle [(ngModel)]="buy" (tap)="clickbuy()"></ion-toggle>
+      </ion-item>
+      <ion-item>
+          <ion-label style="font-size: 1.4rem">可用现金币{{remainCash}}</ion-label>
+          <ion-toggle [(ngModel)]="cash" (tap)="clickcash()"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-size: 1.4rem">可用积分{{remainVip}}</ion-label>
+        <ion-toggle [(ngModel)]="vip" (tap)="clickvip()"></ion-toggle>
+    </ion-item>
+    </ion-list>
+  </div>
+  <div>
+    <div class="tsettle">
+        <p >总金额</p><p>¥{{allAmount}}</p>
+    </div>
+    <div class="tsettle">
+        <p>现金红包抵扣</p><p>-¥{{deduRedback}}</p>
+    </div>
+    <div class="tsettle">
+        <p>购物币抵扣</p><p>-¥{{dedubuy}}</p>
+    </div>
+    <div class="tsettle">
+        <p>现金币抵扣</p><p>-¥{{deduCash}}</p>
+    </div>
+    <div class="tsettle">
+      <p>积分抵扣</p><p>-¥{{deduVip}}</p>
+  </div>
+  </div>
+</ion-content>
+<div class="tfloot" [ngStyle]="{'display':isup == true ? 'none' : '' }">
+  <div class="tleft">
+    <em>合计：</em><p>¥{{realpay}}元</p>
+  </div>
+  <button class="buy" ion-button (tap)="goBuy()">提交订单</button>
+</div>

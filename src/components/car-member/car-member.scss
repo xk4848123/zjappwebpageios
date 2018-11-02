@@ -1,0 +1,121 @@
+car-member {
+    .blank{
+        height: 100%;
+    }
+    .modal{
+        display: block;
+        position: absolute;
+        z-index: 99;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #FFF;
+        height: 60%;
+        .tcontain{
+            height: 87%;
+            overflow: scroll;
+        }
+    }
+    .tone{
+        position: relative;
+        z-index: 1;
+        display: block;
+        padding: 0.354rem;
+        margin-bottom: 1rem;
+        div{
+            position: absolute;
+            z-index: 1;
+            left: 0.5rem;
+            width: 7rem;
+            height: 7rem;
+            background: #FFF;
+            img{
+                border-radius: 0.5rem;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        dl{
+            margin-left: 7.9954rem;
+            margin-top: 0.2rem;
+            dt{
+                color:#222;
+                font-size: 1.536rem;
+                margin-top:1rem; 
+                min-height: 0.75rem;
+                max-width: 15rem;
+            }
+            dd{
+                height: 1rem;
+                line-height: 1rem;
+                display: inline-block;
+                color:#fa4535;
+                font-size: 1.436rem;
+                margin-top: 1rem;
+            }
+            span{
+                display: block;
+                float: right;
+                font-size: 1.254rem;
+                line-height: 3.5rem;
+                color: #bcbcbc;
+            }
+        }
+    }
+    .search_title{
+        font-size: 1.4rem;
+        font-weight: bold;
+        padding:0.5rem 0px;
+        margin:0 0 0 1rem;
+        color: #5f5656;
+    }
+    .hotlist{
+        margin-top: 2rem;
+        padding-bottom: 1rem;
+        border-top: 1px solid #e3e3e3;
+    }
+    .hotlist span{
+        padding:.5rem 1rem;
+        background: #eee;
+        border-radius: .5rem;
+        margin:.5rem;
+        display: inline-block;
+        font-size: 1.1rem;
+    }
+    .tfoot-right{
+        width: 100%;
+        display: flex;
+        bottom: 0;
+        height: 13%;
+         .buy{
+             float: right;
+             width: 100%;
+             border-radius: 0;
+             margin: 0;
+             span{
+                 font-size: 1.4rem;
+             }
+             height: 100%;
+         }
+    }
+    .tbuyCount{
+        border-top: 1px solid #e3e3e3;
+        width: 100%;
+        height: 15%;
+        samp{
+            line-height: 4rem;
+            color: #383434;
+        }
+        button{
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        input{
+            border: 1px solid #e3e3e3;
+            width: 180%;
+            margin-top: 1.2rem;
+            margin-left: -0.8rem;
+            text-align: center;
+        }
+    }
+}
