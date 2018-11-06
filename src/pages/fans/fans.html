@@ -10,25 +10,23 @@
   </ion-navbar>
 </ion-header>
 <ion-content style="background: #eeeeee;">
-    <div class="card-div">
-        <div class="card-line" (tap)="goToDetail('Red')">
-            <span class="head-span">红粉</span>
-            <span class="content-span">{{fansmessage.Red}}</span>
-            <ion-icon class="arrows" name="ios-arrow-forward"></ion-icon>
-          </div>
-          <div class="line-div"></div>
-          <div class="card-line" (tap)="goToDetail('Yellow')">
-              <span class="head-span" >黄粉</span>
-              <span class="content-span">{{fansmessage.Yellow}}</span>
-              <ion-icon class="arrows" name="ios-arrow-forward"></ion-icon>
-          </div>
-          <div class="line-div"></div>
-          <div class="card-line" (tap)="goToDetail('Blue')">
-                <span class="head-span">蓝粉</span>
-                <span class="content-span">{{fansmessage.Blue}}</span>
-                <div class="list">
-                <ion-icon class="arrows" name="ios-arrow-forward"></ion-icon>
-                </div>
-          </div>
-        </div>  
+  <div class="card-div">
+    <div class="card-line" (tap)="goToDetail('Red')">
+      <span class="head-span">红粉</span>
+      <span class="content-span">{{fansmessage.Red}}</span>
+      <ion-icon class="arrows" name="ios-arrow-forward"></ion-icon>
+    </div>
+    <div class="line-div"></div>
+    <div class="card-line" (tap)="goToDetail('Blue')">
+      <span class="head-span">蓝粉</span>
+      <span class="content-span">{{fansmessage.Blue}}</span>
+      <ion-icon class="arrows" name="ios-arrow-forward"></ion-icon>
+    </div>
+    <div class="line-div"></div>
+    <div class="card-line" (tap)="goToDetail('Yellow')">
+      <span class="head-span">黄粉</span>
+      <span class="content-span">{{fansmessage.Yellow}}</span>
+      <ion-icon class="arrows" name="ios-arrow-forward"></ion-icon>
+    </div>
+  </div>
 </ion-content>

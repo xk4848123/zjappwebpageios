@@ -22,8 +22,9 @@
     </div>
 
   <div class="up" (tap)="toChange('Red')">红粉</div>
-  <div class="center" (tap)="toChange('Yellow')">黄粉</div>
-  <div class="down" (tap)="toChange('Blue')">蓝粉</div>
+  <div class="center" (tap)="toChange('Blue')">蓝粉</div>
+  <div class="down" (tap)="toChange('Yellow')">黄粉</div>
+  
   <!--上滑的时候，加载数据-->
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="50px">
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">

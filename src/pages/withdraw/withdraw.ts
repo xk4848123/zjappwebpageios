@@ -74,14 +74,26 @@ export class WithdrawPage {
     }
     let token = this.storage.get('token');
     let api = 'v1/PersonalCenter/TxElecNum/' + token;
-      this.httpService.doFormPost(
-        api
-        ,{
+    let requestJSON;
+    if(this.obj['type'] == 1){
+      requestJSON = {
+        money: this.txmoney,
+        txType: this.obj['type'],
+        cardNo: this.obj['data'].account,
+        trueName: this.obj['data'].name
+      };
+    }else{
+      requestJSON = {
         money: this.txmoney,
         txType: this.obj['type'],
         cardNo: this.obj['data'].account,
         trueName: this.obj['data'].name,
-        },
+        bankName: this.obj['data'].bankname
+      };
+    }
+      this.httpService.doFormPost(
+        api
+        ,requestJSON,
        (res)=>{
          if (res.error_code == 0) {
           this.noticeSer.showToast('提交成功，等待工作人员处理');

@@ -62,8 +62,8 @@ export class FandetailPage {
 
   ionViewWillEnter() {
     this.redDiv = this.el.nativeElement.querySelector('.up');
-    this.yellowDiv = this.el.nativeElement.querySelector('.center');
-    this.blueDiv = this.el.nativeElement.querySelector('.down');
+    this.yellowDiv = this.el.nativeElement.querySelector('.down');
+    this.blueDiv = this.el.nativeElement.querySelector('.center');
     this.changeColor();
     this.getData();
   }

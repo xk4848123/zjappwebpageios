@@ -23,6 +23,7 @@ import { ConfigProvider } from '../../providers/config/config';
 })
 export class InformationPage {
   public messages = '';
+  public status = -1;
   constructor(public navCtrl: NavController, public navParams: NavParams, private config: ConfigProvider, public storage: StorageProvider, public httpService: HttpServicesProvider, public toast: ToastProvider) {
   }
 
@@ -34,9 +35,10 @@ export class InformationPage {
       this.httpService.doFormPost(api, { orderNo: this.navParams.get('orderNo') }, (data) => {
         if (data.error_code == 0) {
           this.messages = data.data;
+          this.status = 0;
         }
         else {
-          this.toast.showToast('数据获取异常');
+          this.status = -1;
         }
       });
     }

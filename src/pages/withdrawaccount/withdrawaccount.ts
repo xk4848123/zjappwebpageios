@@ -40,7 +40,7 @@ export class WithdrawaccountPage {
       this.aliacounts=res.data.aliAccount;
       this.bankacounts=res.data.bankAccount;
       for (let index = 0; index < this.bankacounts.length; index++) {
-        this.bankacounts[index].account=this.hidebankAccount(this.bankacounts[index].account);
+        this.bankacounts[index].showAccount=this.hidebankAccount(this.bankacounts[index].account);
       }
       }else if (res.error_code == 3) {
         //抢登处理

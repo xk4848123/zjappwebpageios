@@ -137,7 +137,6 @@ export class OrdersPage {
       let api = 'v1/PersonalCenter/getOrder/' + token + '/' + this.typeData;
       this.httpService.requestData(api, (data) => {
         if (data.error_code == 0) {
-          console.log(data);
           for (let i = 0; i < data.data.length; i++) {
             this.temp.push(data.data[i]);
           }

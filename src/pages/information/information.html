@@ -14,24 +14,12 @@
 
 
 <ion-content style="background: #eeeeee;">
-    <ion-grid style="padding: 1px;width: 100%;">
+    <ion-grid style="padding: 1px;width: 100%;" *ngIf="status==0">
         <div class="card-div">
-        <ion-row class="col_row">
-            <ion-col  style="width: 100%" *ngFor="let item of temps.orderlines">
-                <img class="img"  [src]="config.domain+item.photo">
-                <div class="hp">
-                    <div> {{item.productname}}</div>
-                        <div style="float:right;margin-top:-20px;">{{item.price}}元</div>  
-                </div>
-                <br />
-                <span class="hp" style="float:right">×{{item.productnum}}</span>
-            </ion-col>
-        </ion-row>
         <ion-row  class="col_row">
           <ion-col class="col_2" style="width: 100%">
             <div class="cards-div">
-                <p *ngIf="messages.State==-1">暂无物流信息</p>
-                <p *ngIf="messages.State==1">已取件</p>
+                <p *ngIf="messages.State==4">问题件</p>
                 <p *ngIf="messages.State==2">在途中</p>
                 <p *ngIf="messages.State==3">已签收</p>
             </div>
@@ -41,7 +29,7 @@
       <div class="card-div" style="margin-top:-90px" >
           <ion-row  class="col_row">
             <ion-col class="col_2_div" style="width: 100%">
-              <span >订单编号：{{messages.LogisticCode}}</span><br />
+              <span >物流编号：{{messages.LogisticCode}}</span><br />
               <div class="package-status">
                   <div class="status-box" >
                     <ul  class="status-list" *ngFor="let item of messages.Traces">
@@ -57,9 +45,15 @@
           </ion-row>
         </div>    
         </ion-grid>
-       <ion-grid>
-         <div class="cards-div"  *ngIf="messages.State==-1">
-             <p>暂无物流信息</p>
-          </div>
+       <ion-grid style="padding: 1px;width: 100%;" *ngIf="status==-1">
+          <div class="card-div">
+              <ion-row  class="col_row">
+                <ion-col class="col_2" style="width: 100%">
+                  <div class="cards-div">
+                      <p>暂无物流信息</p>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
        </ion-grid>
 </ion-content>

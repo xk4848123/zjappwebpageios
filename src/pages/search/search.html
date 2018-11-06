@@ -1,80 +1,83 @@
 <ion-header>
   <ion-navbar>
-    <ion-searchbar class="tsearch" [(ngModel)]="keywords"></ion-searchbar>  
+    <ion-searchbar class="tsearch" [(ngModel)]="keywords"></ion-searchbar>
     <ion-buttons end>
       <button ion-button (tap)='getSearchList()' class="tbutton">
-         搜索
+        搜索
       </button>
     </ion-buttons>
   </ion-navbar>
+  <div class="sub_header" *ngIf="flag">
+    <div (tap)="search_sale()">
+      <span [ngClass]="{'tcl':selectTag=='sale'}">销量</span>
+    </div>
+    <div (tap)="search_price()" [ngClass]="{'down':priceFlag}" class="up">
+      <span [ngClass]="{'tcl':selectTag=='price'}">价格</span>
+    </div>
+    <div (tap)="search_elec()" [ngClass]="{'down':elecFlag}" class="up">
+      <span [ngClass]="{'tcl':selectTag=='elec'}">积分</span>
+    </div>
+  </div>
 </ion-header>
 
 <ion-content>
   <div class="search_content" *ngIf="!flag">
 
-      <div class="hotlist">
-          
-              <h3 class="search_title">热搜</h3>
-              <p>
-                <span (tap)='goSearch("生态美")'>生态美</span>
-                <span (tap)='goSearch("净水机")'>净水机</span>
-                <span (tap)='goSearch("蜂蜜")'>蜂蜜</span>
-                <span (tap)='goSearch("山兹珍")'>山兹珍</span>
-                <span (tap)='goSearch("茶叶")'>茶叶</span>
-                <span (tap)='goSearch("面膜")'>面膜</span>
-                <span (tap)='goSearch("酸奶")'>酸奶</span>
-                <span (tap)='goSearch("负离子功能眼镜")'>负离子功能眼镜</span>
-              </p>        
-            </div>
-          
-            <!-- <div class="history" *ngIf="historyList.length>0"> -->
-            <div class="hotlist">
-              <div>
-                  <h3 class="search_title search_line">历史搜索</h3>
-                  <ion-icon ios="ios-trash" md="md-trash" class="ticon" (tap)="localEmpty()"></ion-icon>
-              </div>
-                 <p>
-                    <span *ngFor="let item of historyList" (press)="removeHistory(item)" (tap)="goSearch(item)">
-                      {{item}}
-                    </span>
-                 </p>
-            </div>
+    <div class="hotlist">
+
+      <h3 class="search_title">热搜</h3>
+      <p>
+        <span (tap)='goSearch("生态美")'>生态美</span>
+        <span (tap)='goSearch("净水机")'>净水机</span>
+        <span (tap)='goSearch("蜂蜜")'>蜂蜜</span>
+        <span (tap)='goSearch("山兹珍")'>山兹珍</span>
+        <span (tap)='goSearch("茶叶")'>茶叶</span>
+        <span (tap)='goSearch("面膜")'>面膜</span>
+        <span (tap)='goSearch("酸奶")'>酸奶</span>
+        <span (tap)='goSearch("负离子功能眼镜")'>负离子功能眼镜</span>
+      </p>
+    </div>
+
+    <!-- <div class="history" *ngIf="historyList.length>0"> -->
+    <div class="hotlist">
+      <div>
+        <h3 class="search_title search_line">历史搜索</h3>
+        <ion-icon ios="ios-trash" md="md-trash" class="ticon" (tap)="localEmpty()"></ion-icon>
+      </div>
+      <p>
+        <span *ngFor="let item of historyList" (press)="removeHistory(item)" (tap)="goSearch(item)">
+          {{item}}
+        </span>
+      </p>
+    </div>
 
   </div>
-  
 
 
-  <div class="list_content"  *ngIf="flag">
 
-      <div class="sub_header">
-          <div (tap)="search_sale()">
-            <span [ngClass]="{'tcl':selectTag=='sale'}">销量</span>
-          </div>
-          <div (tap)="search_price()" [ngClass]="{'down':priceFlag}" class="up">
-              <span [ngClass]="{'tcl':selectTag=='price'}">价格</span>
-          </div>
-          <div (tap)="search_elec()" [ngClass]="{'down':elecFlag}" class="up">
-              <span [ngClass]="{'tcl':selectTag=='elec'}">积分</span>
-          </div>
-      </div>
-
-       <ion-list inset>
-         <ng-container *ngFor="let item of list">
-            <ion-item (tap)="goProduct(item.product.id)" class="tlist" *ngIf="item.product.productphotos.length>0">
-                <ion-thumbnail  item-left>
-                  <img [src]="config.domain+item.product.productphotos[0].photo"/>            
-                </ion-thumbnail>
-                <h2 class="tpn"> {{item.product.productname}}</h2>
-                <p class="tp">
-                   <span style="color:red">¥</span><span style="color: red;font-size: 1.8rem" class="price">&nbsp;{{item.product.price}}</span>
-                   <span style="float: right;"><ion-icon style="color: #e0532d;" name="ios-redBack"></ion-icon><span style="color:#e0532d;font-size: 1.2rem">&nbsp;{{item.product.elecnum}}</span></span>
-                </p>
-              </ion-item>
-         </ng-container>  
-       </ion-list>
+  <div class="list_content" *ngIf="flag">
 
 
-       <!-- <ion-infinite-scroll (ionInfinite)="doLoadMore($event)" *ngIf="hasData">
+
+    <ion-list inset>
+      <ng-container *ngFor="let item of list">
+        <ion-item (tap)="goProduct(item.product.id)" class="tlist" *ngIf="item.product.productphotos.length>0">
+          <ion-thumbnail item-left>
+            <img [src]="config.domain+item.product.productphotos[0].photo" />
+          </ion-thumbnail>
+          <h2 class="tpn"> {{item.product.productname}}</h2>
+          <p class="tp">
+            <span style="color:red">¥</span><span style="color: red;font-size: 1.8rem" class="price">&nbsp;{{item.product.price}}</span>
+            <span style="float: right;">
+              <ion-icon style="color: #e0532d;" name="ios-redBack"></ion-icon><span style="color:#e0532d;font-size: 1.2rem">&nbsp;{{item.product.elecnum}}</span>
+            </span>
+          </p>
+        </ion-item>
+      </ng-container>
+    </ion-list>
+
+
+    <!-- <ion-infinite-scroll (ionInfinite)="doLoadMore($event)" *ngIf="hasData">
         <ion-infinite-scroll-content></ion-infinite-scroll-content>
       </ion-infinite-scroll> -->
   </div>
