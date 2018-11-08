@@ -110,7 +110,6 @@ import { ConfigProvider } from '../providers/config/config';
 import { HttpServicesProvider } from '../providers/http-services/http-services';
 
 import { StorageProvider } from '../providers/storage/storage';
-import { ThemeableBrowser } from '@ionic-native/themeable-browser';
 import { AlertProvider } from '../providers/alert/alert';
 import { ClearloginProvider } from '../providers/clearlogin/clearlogin';
 import { ToastProvider } from '../providers/toast/toast';
@@ -248,7 +247,6 @@ import { AppUpdateProvider } from '../providers/app-update/app-update';
     ConfigProvider,
     HttpServicesProvider,
     StorageProvider,
-    ThemeableBrowser,
     ImgProvider,
     Camera,
     JPush,

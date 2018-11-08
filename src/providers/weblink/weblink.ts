@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { LoadingController,NavController } from 'ionic-angular';
 import { StorageProvider } from '../../providers/storage/storage';
 import { ConfigProvider } from '../../providers/config/config';
-import { ThemeableBrowser } from '@ionic-native/themeable-browser';
+declare let cordova;
 /*
   Generated class for the WeblinkProvider provider.
 
@@ -14,40 +14,14 @@ import { ThemeableBrowser } from '@ionic-native/themeable-browser';
 export class WeblinkProvider {
 
   constructor(public loadingCtrl: LoadingController,
-    private storage: StorageProvider, private themeableBrowser: ThemeableBrowser, private config: ConfigProvider) {
+    private storage: StorageProvider, private config: ConfigProvider) {
     console.log('Hello WeblinkProvider Provider');
   }
 
   loading: any;
 
-  private options = {
-    //这里我仅仅定义了状态栏颜色（ios下有效）和关闭按妞，以及工具条的颜色和标题颜色
-    statusbar:
-    {
-      color: '#ffffffff'
-    },
-    toolbar: {
-      height: 44,
-      color: '#f0f0f0ff'
-    },
-    title:
-    {
-      color: '#003264ff',
-      showPageTitle: true
-    },
-    closeButton: {
-      image: 'close',
-      imagePressed: 'close_pressed',
-      align: 'left',
-      event: 'closePressed'
-    },
-    backButtonCanClose: true
-  };
-
   goWeb(webUrl) {
-
-    this.themeableBrowser.create(webUrl, '_blank', this.options);
- 
+  let ref = cordova.InAppBrowser.open(encodeURI(webUrl), '_blank', 'location=yes,closebuttoncaption=关闭,hideurlbar=yes');
   }
 
   wxGoWebPay(navCtrl:NavController, orderNo, realpay, orderType) {

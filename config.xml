@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.zhongjiantechnologycal.mall" version="2.0.12" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.zhongjiantechnologycal.mall" version="2.0.13" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>众健商城</name>
     <description>一款商城软件</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
@@ -12,7 +12,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <preference name="AutoHideSplashScreen" value="false" />
-    <preference name="SplashScreenDelay" value="50000" />
+    <preference name="SplashScreenDelay" value="40000" />
     <preference name="FadeSplashScreenDuration" value="750" />
     <preference name="ShowSplashScreenSpinner" value="false" />
     <platform name="ios">
@@ -65,7 +65,6 @@
     <plugin name="cordova-plugin-alipay-v2" spec="^1.0.0">
         <variable name="APP_ID" value="2018011001747966" />
     </plugin>
-    <plugin name="cordova-plugin-themeablebrowser" spec="^0.2.17" />
     <plugin name="cordova-plugin-jcore" spec="/Users/apple/dev/tmp/cordova-plugin-jcore-1.1.12" />
     <plugin name="jpush-phonegap-plugin" spec="/Users/apple/dev/tmp/jpush-phonegap-plugin-3.3.2">
         <variable name="APP_KEY" value="753f537a5c55d2f65efcfe55" />
@@ -78,5 +77,6 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <plugin name="it.innowatio.cordova.ios-fullscreen" spec="https://github.com/innowatio/cordova-ios-fullscreen.git" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <engine name="ios" spec="4.5.5" />
 </widget>
