@@ -31,6 +31,10 @@ export class ConfirmVipOrderPage {
   public buy:(boolean) = false;
   public cash:(boolean) = false;
   public vip:(boolean) = false;
+  public redBakNum:(number);
+  public buyNum:(number);
+  public cashNum:(number);
+  public vipNum:(number);
   public res:(any);
   public isup = false;
   public clientHeight:(any);
@@ -74,6 +78,10 @@ export class ConfirmVipOrderPage {
     console.log('ionViewDidLoad ConfirmVipOrderPage');
   }
   ionViewWillEnter(){
+    this.redBakNum = 1;
+    this.cashNum = 1;
+    this.buyNum = 1;
+    this.vipNum = 1;
     this.token = this.storage.get("token");
     var api = "v1/PersonalCenter/GetPersonalAccountBalance/"+this.token;
     this.httpservice.requestData(api,(data)=>{
@@ -173,50 +181,71 @@ export class ConfirmVipOrderPage {
   }
   /**监听币值切换 */
   clickcash(){
-    if(this.redBak==true && this.buy==true && this.cash==true){
+    if(this.redBakNum%2==0 && this.buyNum%2==0 && this.cashNum%2==0){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = this.res.redBak>=this.maxCoupon ? this.maxCoupon : this.res.redBak;
       this.dedubuy =  this.subDouble(this.allAmount,this.deduRedback,2)>=this.res.buy ? this.res.buy: this.subDouble(this.allAmount,this.deduRedback,2);
       this.deduCash = 0;
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==true && this.buy==false && this.cash==true){
+    }else if(this.redBakNum%2==0 && this.buyNum%2==1 && this.cashNum%2==0){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = this.res.redBak>=this.maxCoupon ? this.maxCoupon : this.res.redBak;
       this.dedubuy =  0;
       this.deduCash = 0;
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==true && this.buy==true && this.cash==false){
+    }else if(this.redBakNum%2==0 && this.buyNum%2==0 && this.cashNum%2==1){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback  = this.res.redBak>=this.maxCoupon ? this.maxCoupon : this.res.redBak;
       this.dedubuy =  this.subDouble(this.allAmount,this.deduRedback,2)>=this.res.buy ? this.res.buy: this.subDouble(this.allAmount,this.deduRedback,2);
       this.deduCash = this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2)>=this.res.cash ? this.res.cash : this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2);
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==true && this.buy==false && this.cash==false){
+    }else if(this.redBakNum%2==0 && this.buyNum%2==1 && this.cashNum%2==1){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = this.res.redBak>=this.maxCoupon ? this.maxCoupon : this.res.redBak;
       this.dedubuy =  0;
       this.deduCash = this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2)>=this.res.cash ? this.res.cash : this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2);
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==false && this.buy==false && this.cash==false){
+    }else if(this.redBakNum%2==1 && this.buyNum%2==1 && this.cashNum%2==1){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = 0;
       this.dedubuy = 0;
       this.deduCash = this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2)>=this.res.cash ? this.res.cash : this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2);
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==false && this.buy==false && this.cash==true){
+    }else if(this.redBakNum%2==1 && this.buyNum%2==1 && this.cashNum%2==0){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = 0;
       this.dedubuy = 0;
       this.deduCash = 0;
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==false && this.buy==true && this.cash==false){
+    }else if(this.redBakNum%2==1 && this.buyNum%2==0 && this.cashNum%2==1){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = 0;
       this.dedubuy =  this.subDouble(this.allAmount,this.deduRedback,2)>=this.res.buy ? this.res.buy: this.subDouble(this.allAmount,this.deduRedback,2);
@@ -224,58 +253,83 @@ export class ConfirmVipOrderPage {
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
     }else{
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = 0;
       this.dedubuy = this.allAmount-this.deduRedback>=this.res.buy ? this.res.buy: this.allAmount - this.deduRedback;
       this.deduCash = 0;
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
     }
+    this.cashNum++;
   }
   clickred(){
-    if(this.redBak==true && this.buy==true && this.cash==true){
+    if(this.redBakNum%2==0 && this.buyNum%2==0 && this.cashNum%2==0){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = 0;
       this.dedubuy =  this.subDouble(this.allAmount,this.deduRedback,2)>=this.res.buy ? this.res.buy: this.subDouble(this.allAmount,this.deduRedback,2);
       this.deduCash = this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2)>=this.res.cash ? this.res.cash : this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2);
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==true && this.buy==false && this.cash==true){
+    }else if(this.redBakNum%2==0 && this.buyNum%2==1 && this.cashNum%2==0){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = 0;
       this.dedubuy = 0;
       this.deduCash = this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2)>=this.res.cash ? this.res.cash : this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2);
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==true && this.buy==true && this.cash==false){
+    }else if(this.redBakNum%2==0 && this.buyNum%2==0 && this.cashNum%2==1){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = 0;
       this.dedubuy =  this.subDouble(this.allAmount,this.deduRedback,2)>=this.res.buy ? this.res.buy: this.subDouble(this.allAmount,this.deduRedback,2);
       this.deduCash = 0;
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==true && this.buy==false && this.cash==false){
+    }else if(this.redBakNum%2==0 && this.buyNum%2==1 && this.cashNum%2==1){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = 0;
       this.dedubuy = 0;
       this.deduCash = 0;
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==false && this.buy==false && this.cash==false){
+    }else if(this.redBakNum%2==1 && this.buyNum%2==1 && this.cashNum%2==1){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = this.res.redBak>=this.maxCoupon ? this.maxCoupon : this.res.redBak;
       this.dedubuy = 0;
       this.deduCash = 0;
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==false && this.buy==false && this.cash==true){
+    }else if(this.redBakNum%2==1 && this.buyNum%2==1 && this.cashNum%2==0){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = this.res.redBak>=this.maxCoupon ? this.maxCoupon : this.res.redBak;
       this.dedubuy = 0;
       this.deduCash = this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2)>=this.res.cash ? this.res.cash : this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2);
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==false && this.buy==true && this.cash==false){
+    }else if(this.redBakNum%2==1 && this.buyNum%2==0 && this.cashNum%2==1){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = this.res.redBak>=this.maxCoupon ? this.maxCoupon : this.res.redBak;
       this.dedubuy =  this.subDouble(this.allAmount,this.deduRedback,2)>=this.res.buy ? this.res.buy: this.subDouble(this.allAmount,this.deduRedback,2);
@@ -283,58 +337,83 @@ export class ConfirmVipOrderPage {
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
     }else{
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = this.res.redBak>=this.maxCoupon ? this.maxCoupon : this.res.redBak;
       this.dedubuy =  this.subDouble(this.allAmount,this.deduRedback,2)>=this.res.buy ? this.res.buy: this.subDouble(this.allAmount,this.deduRedback,2);
       this.deduCash = this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2)>=this.res.cash ? this.res.cash : this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2);
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
     }
+    this.redBakNum++;
   }
   clickbuy(){
-    if(this.redBak==true && this.buy==true && this.cash==true){
+    if(this.redBakNum%2==0 && this.buyNum%2==0 && this.cashNum%2==0){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = this.res.redBak>=this.maxCoupon ? this.maxCoupon : this.res.redBak;
       this.dedubuy =  0;
       this.deduCash = this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2)>=this.res.cash ? this.res.cash : this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2);
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==true && this.buy==false && this.cash==true){
+    }else if(this.redBakNum%2==0 && this.buyNum%2==1 && this.cashNum%2==0){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = this.res.redBak>=this.maxCoupon ? this.maxCoupon : this.res.redBak;
       this.dedubuy =  this.subDouble(this.allAmount,this.deduRedback,2)>=this.res.buy ? this.res.buy: this.subDouble(this.allAmount,this.deduRedback,2);
       this.deduCash = this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2)>=this.res.cash ? this.res.cash : this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2);
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==true && this.buy==true && this.cash==false){
+    }else if(this.redBakNum%2==0 && this.buyNum%2==0 && this.cashNum%2==1){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = this.res.redBak>=this.maxCoupon ? this.maxCoupon : this.res.redBak;
       this.dedubuy =  0;
       this.deduCash = 0;
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==true && this.buy==false && this.cash==false){
+    }else if(this.redBakNum%2==0 && this.buyNum%2==1 && this.cashNum%2==1){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = this.res.redBak>=this.maxCoupon ? this.maxCoupon : this.res.redBak;
       this.dedubuy =  this.subDouble(this.allAmount,this.deduRedback,2)>=this.res.buy ? this.res.buy: this.subDouble(this.allAmount,this.deduRedback,2);
       this.deduCash = 0;
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==false && this.buy==false && this.cash==false){
+    }else if(this.redBakNum%2==1 && this.buyNum%2==1 && this.cashNum%2==1){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = 0;
       this.dedubuy =  this.subDouble(this.allAmount,this.deduRedback,2)>=this.res.buy ? this.res.buy: this.subDouble(this.allAmount,this.deduRedback,2);
       this.deduCash = 0;
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==false && this.buy==false && this.cash==true){
+    }else if(this.redBakNum%2==1 && this.buyNum%2==1 && this.cashNum%2==0){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = 0;
       this.dedubuy = this.allAmount-this.deduRedback>=this.res.buy ? this.res.buy: this.allAmount - this.deduRedback;
       this.deduCash = this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2)>=this.res.cash ? this.res.cash : this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2);
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
-    }else if(this.redBak==false && this.buy==true && this.cash==false){
+    }else if(this.redBakNum%2==1 && this.buyNum%2==0 && this.cashNum%2==1){
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = 0;
       this.dedubuy =  0;
@@ -342,24 +421,56 @@ export class ConfirmVipOrderPage {
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
     }else{
       this.vip = false;
+      if(this.vipNum%2==0){
+        this.vipNum++;
+      }
       this.deduVip = 0;
       this.deduRedback = 0;
       this.dedubuy = 0;
       this.deduCash = this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2)>=this.res.cash ? this.res.cash : this.subDouble3(this.allAmount,this.deduRedback,this.dedubuy,2);
       this.realpay = this.subDouble4(this.allAmount,this.deduRedback,this.dedubuy,this.deduCash,2);
     }
+    this.buyNum++;
   }
   clickvip(){
-    if(this.vip == false){
+    if(this.vipNum%2 == 1){
       this.redBak = false;
       this.buy = false;
       this.cash = false;
+      if(this.redBakNum%2==0){
+        this.redBakNum++;
+      }
+      if(this.buyNum%2==0){
+        this.buyNum++;
+      }
+      if(this.cashNum%2==0){
+        this.cashNum++;
+      }
       this.deduRedback = 0;
       this.dedubuy = 0;
       this.deduCash = 0;
       this.deduVip = this.allAmount>=this.remainVip ? this.remainVip : this.allAmount;
       this.realpay = this.subDouble(this.allAmount,this.deduVip,2);
+    }else{
+      this.redBak = false;
+      this.buy = false;
+      this.cash = false;
+      if(this.redBakNum%2==0){
+        this.redBakNum++;
+      }
+      if(this.buyNum%2==0){
+        this.buyNum++;
+      }
+      if(this.cashNum%2==0){
+        this.cashNum++;
+      }
+      this.deduRedback = 0;
+      this.dedubuy = 0;
+      this.deduCash = 0;
+      this.deduVip = 0;
+      this.realpay = this.subDouble(this.allAmount,this.deduVip,2);
     }
+    this.vipNum++;
   }
   goBuy(){
     var orderHeads = new Array();

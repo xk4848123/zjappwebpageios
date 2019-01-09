@@ -35,7 +35,7 @@
 
     <div class="center" *ngFor="let item1 of tempData.orderlines">
             <img [src]="config.domain+item1.photo" />
-            <div class="productName">{{item1.productname}}</div>
+            <div class="productName">{{item1.productname}}<span style="color: #666666">({{item1.specname}})</span></div>
             <div class="productPrice">
                 ￥<span>{{item1.price}}</span>
             </div>

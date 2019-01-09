@@ -34,6 +34,7 @@
         <div class="center" *ngFor="let item1 of item.orderlines" (tap)="pushdetail(item.id,item.orderno,item)">
             <img [src]="config.domain+item1.photo" />
             <div class="productName">{{item1.productname}}</div>
+            <div class="specName">{{item1.specname}}</div>
             <div class="productPrice">
                 ￥<span>{{item1.price}}</span>
             </div>
@@ -49,12 +50,12 @@
         </div>
 
         <div class="btnDiv" *ngIf="item.curstatus==0">
-            <div class="btn" (tap)="pushrefund(item.orderno)">申请退款</div>
+            <div class="btn" (tap)="pushrefund(item.orderno,item)">申请退款</div>
         </div>
         <div class="btnDiv" *ngIf="item.curstatus==1">
             <div class="btn" (tap)="information(item.orderno)">查看物流</div>
             <div class="btn" (tap)="confirmorder(item)">确认收货</div>
-            <div class="btn" (tap)="pushsale(item.orderno)">申请退货</div>
+            <div class="btn" (tap)="pushsale(item.orderno,item)">申请退货</div>
         </div>
         <div class="btnDiv" *ngIf="item.curstatus==2">
             <div class="btn" (tap)="comment(item.id,item.orderno,item)">评价</div>

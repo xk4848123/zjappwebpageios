@@ -24,9 +24,11 @@ import { RloginprocessProvider } from '../../providers/rloginprocess/rloginproce
 export class SalereturnPage {
   public  getSelectedText='';
   orderNo:string;
+  temp:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,private config: ConfigProvider,
     public storage: StorageProvider, public httpService: HttpServicesProvider, public toast: ToastProvider,private rclogin: RloginprocessProvider) {
     this.orderNo = this.navParams.get('orderNo');
+    this.temp = this.navParams.get('item');
   }
   confirm(){
     let token = this.storage.get('token');

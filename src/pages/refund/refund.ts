@@ -23,10 +23,12 @@ import { ConfigProvider } from '../../providers/config/config';
 })
 export class RefundPage {
 orderNo:string;
+temp:any;
 public  getSelectedText='';
   constructor(public navCtrl: NavController, public navParams: NavParams,private config: ConfigProvider,public storage: StorageProvider,
      public httpService: HttpServicesProvider, public toast: ToastProvider,private rclogin: RloginprocessProvider) {
       this.orderNo = this.navParams.get('orderNo');
+      this.temp = this.navParams.get('item');
   }
   confirm(){
     let token = this.storage.get('token');

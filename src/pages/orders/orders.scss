@@ -43,7 +43,17 @@ page-orders {
         }
         .productName{
             position: absolute;
-            top: 9px;
+            top: 6px;
+            left: 85px;
+            right: 85px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2; //文本行数
+            overflow: hidden;
+        }
+        .specName{
+            position: absolute;
+            top: 46px;
             left: 85px;
             right: 85px;
             display: -webkit-box;
@@ -53,7 +63,7 @@ page-orders {
         }
         .productPrice{
             position: absolute;
-            top: 9px;
+            top: 6px;
             height: 20px;
             line-height: 20px;
             right: 5px;
@@ -61,7 +71,7 @@ page-orders {
         }
         .productNum{
             position: absolute;
-            top:29px;
+            top:26px;
             height: 20px;
             line-height: 20px;
             right: 5px;

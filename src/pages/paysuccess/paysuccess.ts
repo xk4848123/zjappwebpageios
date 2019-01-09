@@ -35,4 +35,8 @@ export class PaysuccessPage {
       withoutRoot: 'withoutRoot'
     });
   }
+
+  gotoRoot(){
+    this.navCtrl.popToRoot();
+  }
 }

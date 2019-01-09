@@ -249,16 +249,18 @@ export class OrdersPage {
     });
   }
   //申请退款
-  pushrefund(orderno){
+  pushrefund(orderno,item){
     this.navCtrl.push('RefundPage',
     {
+      item:item,
       orderNo:orderno 
     });
   }
   //申请退货
-  pushsale(orderno){
+  pushsale(orderno,item){
     this.navCtrl.push('SalereturnPage',
     {
+      item:item,
       orderNo:orderno 
     });
   }
